@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* 全局样式定义 Powered by Zoomla!逐浪CMS z01.com*/
+@import url("//code.z01.com/Zfont.css");
+@import url("/dist/css/ZLico.css");
+
+.top_Header ul li a{color:rgba(33,37,41,1.00);}
+.top_Header .navbar-brand img{height:2.5rem;}
+.top_Header .navbar-brand {display: flex;}
+.top_Header .navbar-brand span{margin-left: 0.5rem;color:#ccc;font-size: 1.5rem;}
+.top_Header ul li.active a{color: rgba(214,47,47,1.00);}
+.navbar{background:rgba(255,255,255,0.9);    box-shadow: 5px 5px 5px rgba(0,0,0,0.43);}
+
+main ul { padding-left: 0; list-style: none; }
+main li { float: left;text-align: center;  margin-left: 2px; margin-top: 2px; width: 4rem; height: 4rem; background: #eee; }
+main li:hover { background: #ccc; }
+main li span { display: block; width: 100%; font-size: 1.6rem; }
+main li em { font-style: normal;  }
+
+.con_Tent{margin-left: 0;margin-right: 0;}
+.con_Tent .nav{display: block;}
+.con_Tent_left_l strong{display: block;padding-left: 1.5rem; font-size: 1.15rem;}
+.con_Tent_left h1{padding: .25rem 1.5rem;font-size: 1.2rem}
+.con_Tent_left li{display: block;line-height:1.4rem;font-size: 90%;}
+.con_Tent_left li a{color: rgba(0,0,0,.65);}
+.con_Tent_left li.active a{color:rgba(214,47,47,1.00);}
+.con_Tent_left_l{min-height: 86vh;max-height: calc(100vh - 4.2rem);padding-top: .6rem;overflow-y: auto;}
+.con_Tent_main{padding-top: 2.8rem;overflow: hidden;}
+.con_Tent_main h1{font-size:1.2rem;}
+.con_Tent_main p{color:#666;}
+.con_Tent_b{border-right: 1px solid rgba(200,200,200,0.52);}
+.con_Tent_bq{text-align: center;color: rgb(132, 132, 132);}
+.con_Tent_bq a{color: rgb(132, 132, 132);}
+.con_Tent_bq a:hover{color:rgba(255,161,163,1.00)}
+
+@media (min-width: 1200px){
+.con_Tent_b {
+    max-width: 320px;
+	}
+}
+
+
+
+/*key:UG93ZXJlZCBieSBab29tbGEh6YCQ5rWqQ01TIHd3d3cuejAxLmNvbQ== */
