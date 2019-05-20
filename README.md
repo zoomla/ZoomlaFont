@@ -4,6 +4,8 @@
 
 # 逐浪字库：恢宏宋学 专注中文呈现与文明传播
 
+## 逐浪软件-专注汉语基础数据元研究与文明基石拓荒者
+
 ![](https://www.ziti163.com/Template/Font/style/images/logo.svg)
 
 
