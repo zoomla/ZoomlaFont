@@ -16,6 +16,13 @@
         |-- 字体01~字体27：                //字体设计中的原字，即你可以将这些字体导入到FontCreator软件中，生成字体字库。
 
 
+*注：创作字体过程中使用的adobe、Core、FontCreator、jpg、png、zip等工具，归这些工具厂商所有，我们在此公布仅代表使用方法，不代表授权，相应的商业创作请遵从各国法律获取授权后进行创作。*
+
+
+QQ交流群号：
+[![加入QQ群](https://img.shields.io/badge/一群-541450128-blue.svg)](https://jq.qq.com/?_wv=1027&k=5Ephzpq)  
+
+[![加入QQ群](https://img.shields.io/badge/二群-601781959-blue.svg)](https://jq.qq.com/?_wv=1027&k=50a28BK) 
 
 
 
