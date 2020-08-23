@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link href="res/css/bootstrap.min.css" rel="stylesheet"/>
+<link  href="res/css/swiper.min.css" rel="stylesheet">
+<link  href="res/css/zico.min.css" rel="stylesheet">
+<link href="theme/css/v4style.css" rel="stylesheet"/>
+<script src="res/js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.min.js" ></script>
+<title>在线书写创作台- &#x9010;&#x6D6A;CMS</title> 
+<link href="theme/css/v4style.css" rel="stylesheet"/>
+</head>
+<body>
+<h1 class="text-center">示意例子在线版本<a href="http://v.ziti163.com">http://v.ziti163.com</a>依赖于<a href="http://www.z01.com">Zoomla!逐浪CMS</a>
+<div class="container font_write_con">
+<div class="d-flex">
+    <div class="panel_side">
+        <div class="brush_list">
+            <div class="brush_list_title">控制板</div>
+            <a data-pen="regular" class="pen_style btn btn-outline-info btn-sm active" href="javascript:;">传统画笔</a>
+            <a data-pen="crayon" class="pen_style btn btn-outline-info btn-sm" href="javascript:;">童心蜡笔</a>
+            <a data-pen="shoujin" class="pen_style btn btn-outline-info btn-sm" href="javascript:;">瘦金情调</a>
+            <a data-pen="pencil" class="pen_style btn btn-outline-info btn-sm" href="javascript:;">现代铅笔</a>
+            <a data-pen="brush" class="pen_style btn btn-outline-info btn-sm" href="javascript:;">现代粉墨</a>
+            <a data-pen="xingshu" class="pen_style btn btn-outline-info btn-sm" href="javascript:;">锐丽行书</a>
+        </div>
+        <div class="flex-grow-1"></div>
+        <div class="my-1">
+            <input type="number" max="48" min="16" id="pen_size" class="form-control" style="width:120px;" />
+            <div title="画笔粗细预览" class="text-center my-1 pen_width"><span>画笔粗细：</span><span id="pen_size_view" class="d-inline-block" style="background-color:#000;width:26px;height26px">26</span></div>
+        </div>
+        <select class="custom-select my-1" id="font_select" style="width:120px;">
+            <option data-font="none" selected>常规</option>
+            <option data-font="zfont01">逐浪报人书法行体</option>
+            <option data-font="zfont02">逐浪海棠居刻本字</option>
+            <option data-font="zfont03">逐浪粗颜楷</option>
+            <option data-font="zfont04">逐浪日系楷体</option>
+            <option data-font="zfont05">逐浪唐寅行书体</option>
+            <option data-font="zfont06">逐浪帅宋斜楷体</option>
+            <option data-font="zfont07">逐浪音乐符号歌谱体</option>
+            <option data-font="zfont08">逐浪瑶小硬</option>
+            <option data-font="zfont09">逐浪丫玉体</option>
+            <option data-font="zfont10">逐浪新宋_特细</option>
+            <option data-font="zfont11">逐浪湘教钢笔体</option>
+            <option data-font="zfont12">逐浪细阁体</option>
+            <option data-font="zfont13">逐浪文宣剪纸体</option>
+            <option data-font="zfont14">逐浪时尚钢笔体</option>
+            <option data-font="zfont15">逐浪金农书法体</option>
+            <option data-font="zfont16">逐浪海昏侯汉简隶书</option>
+            <option data-font="zfont17">逐浪古宋书法楷体</option>
+            <option data-font="zfont18">逐浪盖世英雄狂草书</option>
+            <option data-font="zfont19">逐浪报人书法行体</option>
+            <option data-font="zfont20">逐浪仿篆体</option>
+        </select>
+        <button id="btn_show_word" class="show_word" title="点我切换背景文字">
+            <i class="zi zi_eye zi_3x" id="icon-show_word"></i>
+            <div id="word_show" class="d-none">文</div>
+        </button>
+
+    </div>
+    <div>
+        <div class="" style="width:600px;height:600px;position:relative;">
+            <canvas id="canvas_main" width="600" height="600"></canvas>
+            <div id="font_canvas_bg" class="font_canvas_bg">文</div>
+            <div id="bg_word" class="canvas_font">文</div>
+            <div id="svg_display" class="d-none"></div>
+        </div>
+        <div class="btn_toolbar" style="width:600px;">
+            <div class="btn-group mr-2">
+                <a href="javascript:;" class="btn btn-outline-info" id="draw_pre">撤销</a>
+                <a href="javascript:;" class="btn btn-outline-info" id="draw_next">恢复</a>
+            </div>
+            <div class="btn-group mr-2">
+                <a href="javascript:;" class="btn btn-outline-info" id="draw_clear">清空画板</a>
+                <a href="javascript:;" class="btn btn-outline-info" id="draw_replay">书写回放</a>
+                <a href="javascript:;" class="btn btn-outline-info" id="draw_getSvg">获取引用</a>
+                <a href="javascript:;" class="btn btn-info" id="draw_save">保存书写</a>
+            </div>
+        </div>
+    </div>    
+    <div style="display:none;">
+       <img src="FontCreation/res/pens/pen_brush.png" id="pen_brush">
+       <img src="FontCreation/res/pens/pen_crayon.png" id="pen_crayon">
+       <img src="FontCreation/res/pens/pen_pencil.png" id="pen_pencil">
+    </div>
+</div>
+
+
+
+</div>
+
+
+<script src="js/Plugs/canvas2svg.js"></script>
+<script src="js/write-line.js"></script>
+
+</script>
+
+</body>
+</html>

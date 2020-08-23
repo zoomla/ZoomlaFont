@@ -1,0 +1,135 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #e6e6e6
+}
+
+.box {
+    background: #f6f7f8;
+    margin: auto;
+    margin-top: 5%;
+    overflow: hidden;
+    min-height: 49px;
+    border: 1px solid #d3d6db;
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,.2)
+}
+
+.slide-wrap {
+    position: relative;
+    background: #e7e7e7;
+    border: 1px solid #bdc1c9;
+    width: 100%
+}
+
+.border {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+}
+
+.slide {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left .5s;
+    left: 0;
+    width: 100%
+}
+
+.slide-active-r {
+    left: -30px
+}
+
+.slide-active-l {
+    left: 30px
+}
+
+.shift {
+    position: absolute;
+    z-index: 1;
+    background-color: #d3d7dc;
+    height: 100%;
+    transition: opacity .5s,width .1s,margin .5s;
+    width: 0;
+    opacity: 0
+}
+
+.shift-active {
+    width: 66px;
+    opacity: .65
+}
+
+.left {
+    left: -33px
+}
+
+.right {
+    right: -33px
+}
+
+i.shift {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    background-image: url(angle.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 45px
+}
+
+i.left {
+    background-position: 0 0
+}
+
+i.right {
+    background-position: -28px 0
+}
+
+.i-active {
+    width: 28px;
+    opacity: 1;
+    margin: 0 36px
+}
+
+.i-active-move {
+    margin: 0 18px
+}
+
+ul {
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+    transition: transform .5s ease-out
+}
+
+li {
+    display: inline-block;
+    background-color: #c7c8c9
+}
+
+.title:hover {
+    background-color: #7ebafa
+}
+
+.title:active {
+    font-weight: 900
+}
+
+.title {
+    cursor: pointer;
+    text-align: center;
+    font-family: lucida grande;
+    position: absolute;
+    font-weight: 500;
+    line-height: 40px;
+    color: #6a7180;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+span {
+    color: #89919c
+}

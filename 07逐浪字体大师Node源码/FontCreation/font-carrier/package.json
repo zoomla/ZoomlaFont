@@ -1,0 +1,52 @@
+{
+  "name": "font-carrier",
+  "version": "0.2.0",
+  "description": "Zoomla iconfont",
+  "main": "./lib/index.js",
+  "scripts": {
+    "run": "node ./start/index.js"
+  },
+  "author": [
+    "purplebamboo <xhzhuweikang@163.com>",
+    "yisibl <percyley@qq.com>"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "multiline": "^2.0.0",
+    "opentype.js": "^1.1.0",
+    "svg2ttf": "^4.3.0",
+    "svg_pathify": "^0.0.8",
+    "svgpath": "^2.2.2",
+    "ttf2eot": "^2.0.0",
+    "ttf2svg": "0.0.7",
+    "ttf2woff": "^2.0.1",
+    "ttf2woff2": "^3.0.0",
+    "xmldom": "^0.1.27"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purplebamboo/font-carrier.git"
+  },
+  "engines": {
+    "node": ">= 0.4.x"
+  },
+  "keywords": [
+    "font",
+    "webfont",
+    "webfont",
+    "iconfont",
+    "font-cli",
+    "svg2ttf",
+    "ttf2eot",
+    "ttf2woff",
+    "ttf2svg",
+    "fontmin",
+    "font-mini",
+    "font subset",
+    "font subsetting",
+    "font converter",
+    "font-carrier"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,96 @@
+﻿//CSS预编译文件基于Sass语法
+//这是Zoomla!逐浪CMS团队优化的Sass模板，我们为你预置了逐浪字库官方团队的高品质webFont之CDN库，你可完全采用中文定义写作，如下面写法都是合格
+//$中国变量之一:12px;
+//$中国人民中华人民共和国变量之二:#ff0;
+//.a1{width:$中国变量之一 ;}
+//.a2{background: $中国人民中华人民共和国变量之二;}
+//建议CSS注释写在代码段的起始处以使阅读更加流畅
+
+/* 全局样式定义 Powered by Zoomla!逐浪CMS z01.com*/
+@charset "utf-8";
+@import "zoomlaCMS";
+
+a{color: rgba(0,114,188,1);}
+a{ text-decoration:none;}
+a:hover{ color:currentColor;}
+
+.FontZ01_hero{@include dflex;position: relative; height: 20rem; background:#1E1E1E;color: #fff;
+i{font-size: 4.2rem;}
+nav{position:absolute;bottom: 0;}
+nav .nav-link{}
+}
+
+main{}
+
+.FontZ01_con{min-height: 38rem; padding-top: 2rem;
+h2{display: flex; font-weight: 100;font-size: 1.3rem;}
+h2 small{padding-top: .3rem; padding-left: 0.6rem; font-size: 1.02rem;}
+a{color: #666;}
+a:hover{color: #ccc;}
+}
+
+.switch{margin-left: auto;font-size:1rem;}
+
+.FontZ01_list{
+ul{@include myul;}
+li{margin-top:1rem; text-align:center;}
+}
+
+.i-font{display: block;line-height: 5.18rem; font-size:4.126rem;background:#eee;cursor: pointer;
+&:hover{@include 五秒消失切换;font-size: 4.8rem;}
+}
+
+.i-code{display: none;padding-top:0.8em;color: #999; font-size: 0.4rem;line-height: 1rem;}
+
+//自隐藏
+.code_On .i-code{display:inherit;}
+
+//使用帮助
+.user_help{
+h2{padding-top: 0.4rem; color: #666;font-size: 1.2rem;}   
+pre{ padding:1rem; margin-bottom:0.4rem;border:solid 1px #e7e1cd;background-color:#fffdef;}
+span{color: #ccc;font-size: 0.8rem;}
+a{color: #b3b1b1ab;}
+}
+
+//扩展资源
+.other{
+h2{padding-top: 0.4rem; color: #666;font-size: 1.2rem;}   
+ul{@include myul;}
+li{width:12.5%;padding-bottom: 1rem; background:#f9f9f9;border:1px solid #fff;text-align: center;
+    i{display: block;padding-top: 1.2rem;line-height: 4rem;  font-size: 4rem;}
+    }
+}
+
+
+//页脚 
+footer{padding-top:1rem; font-size:.92rem;border-top: 1px solid #eee;text-align: center;color: #ccc;
+a{color: #b3b1b1ab;}
+a:hover{color: #555;}
+}
+
+
+
+//移动适配
+@media (max-width:768px){
+.FontZ01_hero{height: 12rem;
+h1{margin-bottom: 1rem;}
+}
+
+.FontZ01_con{padding-top: 0.6rem; min-height:30rem;}
+
+.FontZ01_list{
+li{margin-top: 0.28rem;}    
+h2{display: inherit;}
+h2 span{display: none;}
+}
+
+.switch{padding-top: 0.28rem;}
+
+.i-font{margin-left: -10px;margin-right: -10px;}
+
+}
+
+
+
+/*key:UG93ZXJlZCBieSBab29tbGEh6YCQ5rWqQ01TIHd3d3cuejAxLmNvbQ== */

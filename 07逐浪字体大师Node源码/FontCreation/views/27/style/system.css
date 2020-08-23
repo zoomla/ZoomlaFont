@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* 全局样式定义 Powered by Zoomla!逐浪CMS z01.com*/
+a { color: #0072bc; }
+
+a { text-decoration: none; }
+
+a:hover { color: currentColor; }
+
+.FontZ01_hero { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-line-pack: center; align-content: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; position: relative; height: 20rem; background: #1E1E1E; color: #fff; }
+
+.FontZ01_hero i { font-size: 4.2rem; }
+
+.FontZ01_hero nav { position: absolute; bottom: 0; }
+
+.FontZ01_con { min-height: 38rem; padding-top: 2rem; }
+
+.FontZ01_con h2 { display: -webkit-box; display: -ms-flexbox; display: flex; font-weight: 100; font-size: 1.3rem; }
+
+.FontZ01_con h2 small { padding-top: .3rem; padding-left: 0.6rem; font-size: 1.02rem; }
+
+.FontZ01_con a { color: #666; }
+
+.FontZ01_con a:hover { color: #ccc; }
+
+.switch { margin-left: auto; font-size: 1rem; }
+
+.FontZ01_list ul { padding-left: 0; margin-bottom: 0; list-style: none; }
+
+.FontZ01_list li { margin-top: 1rem; text-align: center; }
+
+.i-font { display: block; line-height: 5.18rem; font-size: 4.126rem; background: #eee; cursor: pointer; }
+
+.i-font:hover { -webkit-transition: 0.5s ease-in-out; transition: 0.5s ease-in-out; font-size: 4.8rem; }
+
+.i-code { display: none; padding-top: 0.8em; color: #999; font-size: 0.4rem; line-height: 1rem; }
+
+.code_On .i-code { display: inherit; }
+
+.user_help h2 { padding-top: 0.4rem; color: #666; font-size: 1.2rem; }
+
+.user_help pre { padding: 1rem; margin-bottom: 0.4rem; border: solid 1px #e7e1cd; background-color: #fffdef; }
+
+.user_help span { color: #ccc; font-size: 0.8rem; }
+
+.user_help a { color: #b3b1b1ab; }
+
+.other h2 { padding-top: 0.4rem; color: #666; font-size: 1.2rem; }
+
+.other ul { padding-left: 0; margin-bottom: 0; list-style: none; }
+
+.other li { width: 12.5%; padding-bottom: 1rem; background: #f9f9f9; border: 1px solid #fff; text-align: center; }
+
+.other li i { display: block; padding-top: 1.2rem; line-height: 4rem; font-size: 4rem; }
+
+footer { padding-top: 1rem; font-size: .92rem; border-top: 1px solid #eee; text-align: center; color: #ccc; }
+
+footer a { color: #b3b1b1ab; }
+
+footer a:hover { color: #555; }
+
+@media (max-width: 768px) { .FontZ01_hero { height: 12rem; }
+  .FontZ01_hero h1 { margin-bottom: 1rem; }
+  .FontZ01_con { padding-top: 0.6rem; min-height: 30rem; }
+  .FontZ01_list li { margin-top: 0.28rem; }
+  .FontZ01_list h2 { display: inherit; }
+  .FontZ01_list h2 span { display: none; }
+  .switch { padding-top: 0.28rem; }
+  .i-font { margin-left: -10px; margin-right: -10px; } }
+
+/*key:UG93ZXJlZCBieSBab29tbGEh6YCQ5rWqQ01TIHd3d3cuejAxLmNvbQ== */
+/*# sourceMappingURL=system.css.map */
