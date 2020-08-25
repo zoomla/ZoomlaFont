@@ -1,0 +1,106 @@
+﻿<Window x:Class="FontZ01.MainForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontZ01"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+        mc:Ignorable="d"
+        Title="DBCHM" Height="744" Width="1112" ResizeMode="NoResize" Initialized="Window_Initialized" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="313*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="RibbonTabContainer" Margin="0,0,0,3">
+            <TabItem Header="文件" Margin="-2,-2,-14,0">
+                <ToolBar Height="56" Canvas.Top="23" Margin="-17,-5,-10,0">
+                    <Button x:Name="tsbConnect" Content="数据连接" Height="51" VerticalAlignment="Top" Width="75" Click="tsbConnect_Click"/>
+                    <Button x:Name="tsbRefresh" Content="重新获取" Height="51" VerticalAlignment="Top" Width="75" Click="tsbRefresh_Click"/>
+                    <Button x:Name="tsbPDMUpload" Content="批注上载" Height="51" VerticalAlignment="Top" Width="75" Click="tsbPDMUpload_Click"/>
+                    <Button x:Name="tsbBuild" Content="CHM导出" Height="51" VerticalAlignment="Top" Width="75" Click="tsbBuild_Click"/>
+                    <Button x:Name="tsWordExp" Content="Word导出" Height="51" VerticalAlignment="Top" Width="75" Click="tsWordExp_Click"/>
+                    <Button x:Name="tsExcelExp" Content="Excel导出" Height="51" VerticalAlignment="Top" Width="75" Click="tsExcelExp_Click"/>
+                    <Button x:Name="tsPdfExp" Content="PDF导出" Height="51" VerticalAlignment="Top" Width="75" Click="tsPdfExp_Click"/>
+                    <Button x:Name="tsHtmlExp" Content="Html导出" Height="51" VerticalAlignment="Top" Width="75" Click="tsHtmlExp_Click"/>
+                    <Button x:Name="tsXmlExp" Content="XML导出" Height="51" VerticalAlignment="Top" Width="75" Click="tsXmlExp_Click"/>
+                    <Button x:Name="tsMarkDownExp" Content="MD导出" Height="51" VerticalAlignment="Top" Width="75" Click="tsMarkDownExp_Click"/>
+                </ToolBar>
+            </TabItem>
+            <TabItem Header="关于" RenderTransformOrigin="0.94,0.482" Margin="14,-2,-25,0" >
+                <ToolBar Height="56" Canvas.Top="23" Margin="-16,-6,-10,0">
+                    <Button x:Name="toolStripButtonAbout" Content="About" Height="51" VerticalAlignment="Top" Width="75" Click="toolStripButtonAbout_Click" />
+                </ToolBar>
+            </TabItem>
+        </TabControl>
+        <Canvas Margin="7,0,0,0" Grid.RowSpan="2">
+            <Label Content="表名：" Canvas.Left="513" Canvas.Top="124"/>
+            <Label x:Name="labCurrTabComment" Content="表批注:" Canvas.Left="513" Canvas.Top="161"/>
+            <TextBox x:Name="TxtCurrTabComment" Height="23" Canvas.Left="568" TextWrapping="Wrap" Text="" Canvas.Top="159" Width="261" VerticalContentAlignment="Center"/>
+            <GroupBox x:Name="GpTableCol" Header="表列批注（支持多个关键词查询，多个关键词以英文逗号','隔开）" Height="30" Canvas.Top="86" Width="378">
+            </GroupBox>
+            <GroupBox x:Name="GpColumns"  Header="列批注:" Height="408" Canvas.Left="374" Canvas.Top="203" Width="700">
+                <DataGrid x:Name="GV_ColComments" HorizontalAlignment="Left" Height="374" VerticalAlignment="Top" Width="681" Margin="0,0,-5,-1" CanUserReorderColumns="False" CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserAddRows="False" CanUserResizeRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="列名" Width="150" Binding="{Binding ColumnName}" IsReadOnly="True">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Style.Setters>
+                                        <Setter Property="FontSize" Value="16"></Setter>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                                    </Style.Setters>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="数据类型" Width="100" Binding="{Binding TypeName}" IsReadOnly="True">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Style.Setters>
+                                        <Setter Property="FontSize" Value="16"></Setter>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                                    </Style.Setters>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="长度" Width="100" Binding="{Binding Length}" IsReadOnly="True">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Style.Setters>
+                                        <Setter Property="FontSize" Value="16"></Setter>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                                    </Style.Setters>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="列批注" Width="327" Binding="{Binding DeText}">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Style.Setters>
+                                        <Setter Property="FontSize" Value="16"></Setter>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                                    </Style.Setters>
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+            <Button x:Name="BtnSaveGridData" Content="保存" Canvas.Left="987" Canvas.Top="616" Width="82" Height="35" Click="BtnSaveGridData_Click"/>
+            <Label x:Name="lblTip" Content="lblTip" Canvas.Left="474" Canvas.Top="636"/>
+            <Label x:Name="LabCurrTabName" Content="" Canvas.Left="568" Canvas.Top="124" Width="261" RenderTransformOrigin="1,0.571"/>
+            <ProgressBar x:Name="Prog" Height="20" Canvas.Top="685" Width="886" RenderTransformOrigin="-0.12,-2.6" Canvas.Left="38"/>
+            <Label x:Name="lblMsg" Content="" Canvas.Left="962" Canvas.Top="675" Width="107" Height="35"/>
+            <ListBox x:Name="checedkListBox" InkCanvas.Left="10" InkCanvas.Top="29" SelectionChanged="checedkListBox_SelectionChanged" SelectionMode="Multiple" Height="483" Canvas.Left="10" Canvas.Top="181" Width="190" Background="White" BorderBrush="#FF514343" PreviewMouseDown="checedkListBox_PreviewMouseDown">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox x:Name="IsChecks" IsChecked="{Binding IsChecked}" Content="{Binding Table_Name}" Click="IsChecks_Click" Width="160"></CheckBox>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label Content="查询:" Height="30" Width="47" Canvas.Left="10" Canvas.Top="124"/>
+            <TextBox x:Name="TxtTabName"  HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="21" TextChanged="TextBox_TextChanged" Canvas.Left="62" Canvas.Top="124"/>
+            <CheckBox x:Name="Check" Content="全选/反选" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="7.746,-2.045" Height="22" Width="80" Click="Check_Click" Canvas.Top="154" Canvas.Left="10"/>
+            <Label x:Name="Number" Content="已选择0张表" HorizontalAlignment="Left" RenderTransformOrigin="0,-2.048" Height="24" Width="90" VerticalAlignment="Top" VerticalContentAlignment="Center" Canvas.Left="108" Canvas.Top="152"/>
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "逐浪海棠居刻本字";
+    src: url("逐浪海棠居刻本字.eot"); /* IE9 */
+    src: url("逐浪海棠居刻本字.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("逐浪海棠居刻本字.woff") format("woff"), /* chrome、firefox */
+    url("逐浪海棠居刻本字.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("逐浪海棠居刻本字.svg#逐浪海棠居刻本字") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

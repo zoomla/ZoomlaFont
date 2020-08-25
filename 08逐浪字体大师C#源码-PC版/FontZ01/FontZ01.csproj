@@ -1,0 +1,2061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props" Condition="Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props')" />
+  <Import Project="..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.79.1.36\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.79.1.36\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.79.1.36\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.79.1.36\build\cef.redist.x64.props')" />
+  <Import Project="..\packages\CefSharp.Wpf.51.0.0\build\CefSharp.Wpf.props" Condition="Exists('..\packages\CefSharp.Wpf.51.0.0\build\CefSharp.Wpf.props')" />
+  <Import Project="..\packages\CefSharp.Common.51.0.0\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.51.0.0\build\CefSharp.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FFEF137-761B-4088-AB1B-4F628C6A211A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FontZ01</RootNamespace>
+    <AssemblyName>逐浪字体大师</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.2.2\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Fluent, Version=7.0.0.0, Culture=neutral, PublicKeyToken=3e436e32a8c5546f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fluent.Ribbon.7.1.0\lib\net462\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.7.1837, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.7-ci1837\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.2.0.1837, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.2.0-ci1837\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\System.Management.Automation\1.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="XCLNetTools, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XCLNetTools.3.0.1\lib\net40\XCLNetTools.dll</HintPath>
+    </Reference>
+    <Reference Include="ZetaLongPaths, Version=1.0.0.37, Culture=neutral, PublicKeyToken=b764f59068f31f38, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZetaLongPaths.1.0.0.37\lib\net452-full\ZetaLongPaths.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyFont.xaml.cs">
+      <DependentUpon>MyFont.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Writing.xaml.cs">
+      <DependentUpon>Writing.xaml</DependentUpon>
+    </Compile>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AboutBox.xaml.cs">
+      <DependentUpon>AboutBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\GlobalConfig.cs" />
+    <Compile Include="BLL\ScriptCallbackMgr.cs" />
+    <Compile Include="BrowserHandler\ContextMenuHandler.cs" />
+    <Compile Include="BrowserHandler\DownloadHandler.cs" />
+    <Compile Include="BrowserHandler\KeyboardHandler.cs" />
+    <Compile Include="BrowserHandler\LifeSpanHandler.cs" />
+    <Compile Include="CHM\ChmHelp.cs" />
+    <Compile Include="CHM\ChmHtmlHelper.cs" />
+    <Compile Include="Commons\CommonExtension.cs" />
+    <Compile Include="Commons\ConfigUtils.cs" />
+    <Compile Include="Commons\DBCHMConfig.cs" />
+    <Compile Include="Commons\DBUtils.cs" />
+    <Compile Include="Commons\Display.cs" />
+    <Compile Include="Commons\EnumExt.cs" />
+    <Compile Include="Commons\FormUtils.cs" />
+    <Compile Include="Commons\OPType.cs" />
+    <Compile Include="Commons\ProgressArg.cs" />
+    <Compile Include="Commons\XmlAnalyze.cs" />
+    <Compile Include="Common\function.cs" />
+    <Compile Include="Data_Management.xaml.cs">
+      <DependentUpon>Data_Management.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DBForm.xaml.cs">
+      <DependentUpon>DBForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Export\PdmModels\ColumnInfo.cs" />
+    <Compile Include="Export\PdmModels\PdmKey.cs" />
+    <Compile Include="Export\PdmModels\TableInfo.cs" />
+    <Compile Include="Export\PDM\PdmModels.cs" />
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm.xaml.cs">
+      <DependentUpon>ImportForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrom.xaml.cs">
+      <DependentUpon>MainFrom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MarkDown.xaml.cs">
+      <DependentUpon>MarkDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RDP\DataProtection.cs" />
+    <Compile Include="Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theme\WindowBase.cs" />
+    <Page Include="AboutBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data_Management.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DBForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="BLL\FZHelper.cs" />
+    <Compile Include="Common\ServicesHelper.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainFrom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MarkDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyFont.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Black\WindowBaseStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Writing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="assest\app.html" />
+    <Content Include="assest\loading.html" />
+    <Content Include="assest\res\css\animate.min.css" />
+    <Content Include="assest\res\css\bootstrap4.min.css" />
+    <Content Include="assest\res\css\swiper.min.css" />
+    <Content Include="assest\res\css\Zfonts.css" />
+    <Content Include="assest\res\css\zico.css" />
+    <Content Include="assest\res\css\zico.min.css" />
+    <Content Include="assest\res\css\zico_gov.css" />
+    <Content Include="assest\res\css\zico_gov.min.css" />
+    <Content Include="assest\res\css\zico_tm.css" />
+    <Content Include="assest\res\css\zico_tm.min.css" />
+    <Content Include="assest\res\fonts\zi-gov.svg" />
+    <Content Include="assest\res\fonts\zi-regular.svg" />
+    <Content Include="assest\res\fonts\zi-tm.svg" />
+    <Content Include="assest\res\js\bootstrap4.min.js" />
+    <Content Include="assest\res\js\jquery.min.js" />
+    <Content Include="assest\res\js\zico.js" />
+    <Content Include="assest\res\js\zico.min.js" />
+    <Content Include="assest\res\vue\vue-comp.js" />
+    <Content Include="assest\res\vue\vue-route.js" />
+    <Content Include="assest\res\vue\vue.common.js" />
+    <Content Include="assest\res\vue\vue.esm.browser.js" />
+    <Content Include="assest\res\vue\vue.esm.js" />
+    <Content Include="assest\res\vue\vue.js" />
+    <Content Include="assest\res\vue\vue.min.js" />
+    <Content Include="assest\res\vue\vue.runtime.common.js" />
+    <Content Include="assest\res\vue\vue.runtime.esm.js" />
+    <Content Include="assest\res\vue\vue.runtime.js" />
+    <Content Include="assest\res\vue\vue.runtime.min.js" />
+    <Content Include="assest\res\zfont\zFont1-embed.css" />
+    <Content Include="assest\res\zfont\zFont1.css" />
+    <Content Include="assest\res\zfont\zFont1.svg" />
+    <Content Include="assest\res\zfont\zFont2-embed.css" />
+    <Content Include="assest\res\zfont\zFont2.css" />
+    <Content Include="assest\res\zfont\zFont2.svg" />
+    <Content Include="assest\res\zfont\Zoomlabaoren-A102.svg" />
+    <Content Include="assest\res\zfont\ZoomlaCarved-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaCarved.svg" />
+    <Content Include="assest\res\zfont\ZoomlaChongyuan-A006.svg" />
+    <Content Include="assest\res\zfont\ZoomlaGaiShiHero-A050-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaGaiShiHero-A050.svg" />
+    <Content Include="assest\res\zfont\ZoomlaGetelove-A014.svg" />
+    <Content Include="assest\res\zfont\ZoomlaJinnong-A106-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaJinnong-A106.svg" />
+    <Content Include="assest\res\zfont\ZoomlaLingHei-A056-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaLingHei-A056.svg" />
+    <Content Include="assest\res\zfont\ZoomlaMalie-A038-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaMalie-A038.svg" />
+    <Content Include="assest\res\zfont\ZoomlaShuaisong-A028-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaShuaisong-A028.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXiangJiao-A025.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ2-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ2.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ2.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ3-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ3.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ3.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ4-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ4.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ5-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ5.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ6-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaXingtiJ6.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXSongExtraLight-embed.css" />
+    <Content Include="assest\res\zfont\ZoomlaXSongExtraLight.css" />
+    <Content Include="assest\res\zfont\ZoomlaXSongExtraLight.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXSongExtraLightsm.svg" />
+    <Content Include="assest\res\zfont\ZoomlaXSongExtraLightxs.svg" />
+    <Content Include="assest\res\zfont\ZoomlaYayu-A019.svg" />
+    <Content Include="assest\res\zfont\Zoomlayinxiangxili-A031-embed.css" />
+    <Content Include="assest\res\zfont\Zoomlayinxiangxili-A031.svg" />
+    <Content Include="assest\res\zfont\ZoomlaYuan-A016.svg" />
+    <Content Include="assest\style\global.css" />
+    <None Include="使用说明.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="字体大师官网.url">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="res\zhu.png" />
+    <Resource Include="res\oval.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\JaedRing.png" />
+    <Resource Include="res\icon-test.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Writing\jquery.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\animate.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\bootstrap-colorpicker.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\bootstrap-switch.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\bootstrap-theme.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\bootstrap.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\bootstrap4.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\bootstrap5.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\star-rating.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\swiper.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\weui.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\zfont.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\zico.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\zico.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\zico_gov.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\zico_gov.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\zico_tm.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\css\zico_tm.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\fonts\zi-gov.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\fonts\zi-regular.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\fonts\zi-tm.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Writing\res\images\input-checked.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Writing\res\images\input-unchecked.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Writing\res\js\bootstrap-colorpicker.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\bootstrap-switch.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\bootstrap.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\bootstrap4.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\bootstrap5.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\global.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\npm.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\popper.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\sea.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\star-rating.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\swiper.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\trianglify.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\weui.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\zico.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\js\zico.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue-comp.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue-route.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.common.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.esm.browser.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.esm.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.runtime.common.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.runtime.esm.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.runtime.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\res\vue\vue.runtime.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\style\fonts\逐浪海棠居刻本字-embed.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\style\fonts\逐浪海棠居刻本字.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\style\fonts\逐浪海棠居刻本字.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\style\global.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\write.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\write\html2canvas.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\write\potrace.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Writing\write\wordPanel.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Writing\res\css\bootstrap.min.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\css\zico.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\css\zico.min.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\css\zico_gov.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\css\zico_gov.min.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\css\zico_tm.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\css\zico_tm.min.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\fonts\zi-gov.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Writing\res\fonts\zi-gov.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Writing\res\fonts\zi-gov.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\fonts\zi-regular.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Writing\res\fonts\zi-regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Writing\res\fonts\zi-regular.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\fonts\zi-tm.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Writing\res\fonts\zi-tm.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Writing\res\fonts\zi-tm.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\js\bootstrap.min.js.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\res\js\popper.min.js.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\style\fonts\逐浪海棠居刻本字.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Writing\style\fonts\逐浪海棠居刻本字.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Writing\style\fonts\逐浪海棠居刻本字.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\style\global.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\style\global.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Writing\style\_zoomlaCMS.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="res\lang.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\guo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\meng.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\ren.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\zhong.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="res\favicon2.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="res\minimize.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Cloes.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <SplashScreen Include="res\wellcome2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
+    <None Include="res\wellcome3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="res\gezi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\left_bg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="res\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="res\wellcome.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Resource Include="favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Markdown\css\editormd.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\css\editormd.logo.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\css\editormd.logo.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\css\editormd.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\css\editormd.preview.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\css\editormd.preview.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\editormd.js.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\fonts\OpenSans-Bold-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\fonts\OpenSans-BoldItalic-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\fonts\OpenSans-Italic-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\fonts\OpenSans-Light-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\fonts\OpenSans-LightItalic-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\fonts\OpenSans-Regular-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\scripts\linenumber.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Markdown\docs\scripts\prettify\Apache-License-2.0.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Markdown\docs\scripts\prettify\lang-css.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\scripts\prettify\prettify.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\styles\jsdoc-default.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\styles\prettify-jsdoc.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\docs\styles\prettify-tomorrow.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\editormd.amd.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\editormd.amd.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\editormd.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\editormd.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\%40links.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\auto-height.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\change-mode.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\code-fold.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\css\style.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\custom-keyboard-shortcuts.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\custom-toolbar.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\define-plugin.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\delay-renderer-preview.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\dynamic-create-editormd.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\emoji.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\extends.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\external-use.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\flowchart.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\form-get-value.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\full.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\goto-line.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\html-preview-markdown-to-html-custom-toc-container.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\html-preview-markdown-to-html.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\html-tags-decode.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\image-cross-domain-upload.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\image-upload.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Markdown\examples\images\4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\examples\images\7.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\examples\images\8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\examples\images\editormd-screenshot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Markdown\examples\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\js\jquery.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\js\require.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\js\sea.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\js\seajs-main.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\js\zepto.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\katex.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\manually-load-modules.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\multi-editormd.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\multi-languages.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\on-off.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\onchange.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\onfullscreen.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\onload.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\onpreviewing-onpreviewed.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\onresize.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\onscroll-onpreviewscroll.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\onwatch-onunwatch.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\page-break.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\php\cross-domain-upload.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\php\editormd.uploader.class.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\php\post.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\php\upload.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\php\upload_callback.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\readonly.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\resettings.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\search-replace.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\sequence-diagram.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\set-get-replace-selection.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\simple.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\sync-scrolling.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\task-lists.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\themes.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\toc.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\toolbar-auto-fixed.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\use-requirejs.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\use-seajs.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\examples\use-zepto.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\fonts\editormd-logo.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\fonts\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\Gulpfile.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Markdown\images\loading%402x.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\loading%403x.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-favicon-16x16.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-favicon-24x24.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-favicon-32x32.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-favicon-48x48.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-favicon-64x64.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-114x114.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-120x120.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-144x144.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-16x16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-180x180.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-240x240.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-24x24.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-320x320.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-32x32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-48x48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-57x57.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-64x64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-72x72.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\editormd-logo-96x96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Markdown\images\logos\vi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Markdown\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\languages\en.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\languages\zh-tw.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addons.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\comment\comment.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\comment\continuecomment.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\dialog\dialog.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\dialog\dialog.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\display\fullscreen.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\display\fullscreen.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\display\panel.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\display\placeholder.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\display\rulers.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\edit\closebrackets.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\edit\closetag.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\edit\continuelist.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\edit\matchbrackets.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\edit\matchtags.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\edit\trailingspace.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\brace-fold.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\comment-fold.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\foldcode.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\foldgutter.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\foldgutter.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\indent-fold.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\markdown-fold.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\fold\xml-fold.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\anyword-hint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\css-hint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\html-hint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\javascript-hint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\show-hint.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\show-hint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\sql-hint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\hint\xml-hint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\lint\coffeescript-lint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\lint\css-lint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\lint\javascript-lint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\lint\json-lint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\lint\lint.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\lint\lint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\lint\yaml-lint.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\merge\merge.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\merge\merge.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\mode\loadmode.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\mode\multiplex.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\mode\multiplex_test.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\mode\overlay.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\mode\simple.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\runmode\colorize.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\runmode\runmode-standalone.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\runmode\runmode.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\runmode\runmode.node.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\scroll\annotatescrollbar.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\scroll\scrollpastend.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\scroll\simplescrollbars.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\scroll\simplescrollbars.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\search\match-highlighter.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\search\matchesonscrollbar.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\search\matchesonscrollbar.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\search\search.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\search\searchcursor.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\selection\active-line.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\selection\mark-selection.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\selection\selection-pointer.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\tern\tern.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\tern\tern.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\tern\worker.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\addon\wrap\hardwrap.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\codemirror.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\codemirror.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\lib\codemirror.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\lib\codemirror.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\modes.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\apl\apl.js" />
+    <Content Include="Markdown\lib\codemirror\mode\apl\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\asterisk\asterisk.js" />
+    <Content Include="Markdown\lib\codemirror\mode\asterisk\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\clike\clike.js" />
+    <Content Include="Markdown\lib\codemirror\mode\clike\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\clike\scala.html" />
+    <Content Include="Markdown\lib\codemirror\mode\clojure\clojure.js" />
+    <Content Include="Markdown\lib\codemirror\mode\clojure\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\cobol\cobol.js" />
+    <Content Include="Markdown\lib\codemirror\mode\cobol\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\coffeescript\coffeescript.js" />
+    <Content Include="Markdown\lib\codemirror\mode\coffeescript\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\commonlisp\commonlisp.js" />
+    <Content Include="Markdown\lib\codemirror\mode\commonlisp\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\css\css.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\css\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\css\less.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\css\less_test.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\css\scss.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\css\scss_test.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\css\test.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\mode\cypher\cypher.js" />
+    <Content Include="Markdown\lib\codemirror\mode\cypher\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\dart\dart.js" />
+    <Content Include="Markdown\lib\codemirror\mode\dart\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\diff\diff.js" />
+    <Content Include="Markdown\lib\codemirror\mode\diff\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\django\django.js" />
+    <Content Include="Markdown\lib\codemirror\mode\django\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\dockerfile\dockerfile.js" />
+    <Content Include="Markdown\lib\codemirror\mode\dockerfile\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\dtd\dtd.js" />
+    <Content Include="Markdown\lib\codemirror\mode\dtd\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\dylan\dylan.js" />
+    <Content Include="Markdown\lib\codemirror\mode\dylan\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\d\d.js" />
+    <Content Include="Markdown\lib\codemirror\mode\d\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\ebnf\ebnf.js" />
+    <Content Include="Markdown\lib\codemirror\mode\ebnf\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\ecl\ecl.js" />
+    <Content Include="Markdown\lib\codemirror\mode\ecl\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\eiffel\eiffel.js" />
+    <Content Include="Markdown\lib\codemirror\mode\eiffel\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\erlang\erlang.js" />
+    <Content Include="Markdown\lib\codemirror\mode\erlang\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\forth\forth.js" />
+    <Content Include="Markdown\lib\codemirror\mode\forth\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\fortran\fortran.js" />
+    <Content Include="Markdown\lib\codemirror\mode\fortran\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\gas\gas.js" />
+    <Content Include="Markdown\lib\codemirror\mode\gas\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\gfm\gfm.js" />
+    <Content Include="Markdown\lib\codemirror\mode\gfm\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\gfm\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\gherkin\gherkin.js" />
+    <Content Include="Markdown\lib\codemirror\mode\gherkin\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\go\go.js" />
+    <Content Include="Markdown\lib\codemirror\mode\go\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\groovy\groovy.js" />
+    <Content Include="Markdown\lib\codemirror\mode\groovy\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\haml\haml.js" />
+    <Content Include="Markdown\lib\codemirror\mode\haml\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\haml\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\haskell\haskell.js" />
+    <Content Include="Markdown\lib\codemirror\mode\haskell\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\haxe\haxe.js" />
+    <Content Include="Markdown\lib\codemirror\mode\haxe\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\htmlembedded\htmlembedded.js" />
+    <Content Include="Markdown\lib\codemirror\mode\htmlembedded\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="Markdown\lib\codemirror\mode\htmlmixed\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\http\http.js" />
+    <Content Include="Markdown\lib\codemirror\mode\http\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\idl\idl.js" />
+    <Content Include="Markdown\lib\codemirror\mode\idl\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\jade\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\jade\jade.js" />
+    <Content Include="Markdown\lib\codemirror\mode\javascript\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Markdown\lib\codemirror\mode\javascript\json-ld.html" />
+    <Content Include="Markdown\lib\codemirror\mode\javascript\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\javascript\typescript.html" />
+    <Content Include="Markdown\lib\codemirror\mode\jinja2\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\jinja2\jinja2.js" />
+    <Content Include="Markdown\lib\codemirror\mode\julia\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\julia\julia.js" />
+    <Content Include="Markdown\lib\codemirror\mode\kotlin\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\kotlin\kotlin.js" />
+    <Content Include="Markdown\lib\codemirror\mode\livescript\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\livescript\livescript.js" />
+    <Content Include="Markdown\lib\codemirror\mode\lua\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\lua\lua.js" />
+    <Content Include="Markdown\lib\codemirror\mode\markdown\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\markdown\markdown.js" />
+    <Content Include="Markdown\lib\codemirror\mode\markdown\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\meta.js" />
+    <Content Include="Markdown\lib\codemirror\mode\mirc\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\mirc\mirc.js" />
+    <Content Include="Markdown\lib\codemirror\mode\mllike\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\mllike\mllike.js" />
+    <Content Include="Markdown\lib\codemirror\mode\modelica\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\modelica\modelica.js" />
+    <Content Include="Markdown\lib\codemirror\mode\nginx\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\nginx\nginx.js" />
+    <Content Include="Markdown\lib\codemirror\mode\ntriples\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\ntriples\ntriples.js" />
+    <Content Include="Markdown\lib\codemirror\mode\octave\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\octave\octave.js" />
+    <Content Include="Markdown\lib\codemirror\mode\pascal\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\pascal\pascal.js" />
+    <Content Include="Markdown\lib\codemirror\mode\pegjs\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\pegjs\pegjs.js" />
+    <Content Include="Markdown\lib\codemirror\mode\perl\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\perl\perl.js" />
+    <Content Include="Markdown\lib\codemirror\mode\php\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\php\php.js" />
+    <Content Include="Markdown\lib\codemirror\mode\php\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\pig\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\pig\pig.js" />
+    <Content Include="Markdown\lib\codemirror\mode\properties\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\properties\properties.js" />
+    <Content Include="Markdown\lib\codemirror\mode\puppet\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\puppet\puppet.js" />
+    <Content Include="Markdown\lib\codemirror\mode\python\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\python\python.js" />
+    <Content Include="Markdown\lib\codemirror\mode\q\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\q\q.js" />
+    <Content Include="Markdown\lib\codemirror\mode\rpm\changes\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\rpm\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\rpm\rpm.js" />
+    <Content Include="Markdown\lib\codemirror\mode\rst\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\rst\rst.js" />
+    <Content Include="Markdown\lib\codemirror\mode\ruby\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\ruby\ruby.js" />
+    <Content Include="Markdown\lib\codemirror\mode\ruby\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\rust\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\rust\rust.js" />
+    <Content Include="Markdown\lib\codemirror\mode\r\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\r\r.js" />
+    <Content Include="Markdown\lib\codemirror\mode\sass\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\sass\sass.js" />
+    <Content Include="Markdown\lib\codemirror\mode\scheme\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\scheme\scheme.js" />
+    <Content Include="Markdown\lib\codemirror\mode\shell\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\shell\shell.js" />
+    <Content Include="Markdown\lib\codemirror\mode\shell\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\sieve\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\sieve\sieve.js" />
+    <Content Include="Markdown\lib\codemirror\mode\slim\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\slim\slim.js" />
+    <Content Include="Markdown\lib\codemirror\mode\slim\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\smalltalk\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\smalltalk\smalltalk.js" />
+    <Content Include="Markdown\lib\codemirror\mode\smartymixed\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\smartymixed\smartymixed.js" />
+    <Content Include="Markdown\lib\codemirror\mode\smarty\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\smarty\smarty.js" />
+    <Content Include="Markdown\lib\codemirror\mode\solr\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\solr\solr.js" />
+    <Content Include="Markdown\lib\codemirror\mode\soy\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\soy\soy.js" />
+    <Content Include="Markdown\lib\codemirror\mode\sparql\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\sparql\sparql.js" />
+    <Content Include="Markdown\lib\codemirror\mode\spreadsheet\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\spreadsheet\spreadsheet.js" />
+    <Content Include="Markdown\lib\codemirror\mode\sql\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\sql\sql.js" />
+    <Content Include="Markdown\lib\codemirror\mode\stex\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\stex\stex.js" />
+    <Content Include="Markdown\lib\codemirror\mode\stex\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\stylus\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\stylus\stylus.js" />
+    <Content Include="Markdown\lib\codemirror\mode\tcl\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\tcl\tcl.js" />
+    <Content Include="Markdown\lib\codemirror\mode\textile\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\textile\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\textile\textile.js" />
+    <Content Include="Markdown\lib\codemirror\mode\tiddlywiki\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\tiddlywiki\tiddlywiki.css" />
+    <Content Include="Markdown\lib\codemirror\mode\tiddlywiki\tiddlywiki.js" />
+    <Content Include="Markdown\lib\codemirror\mode\tiki\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\tiki\tiki.css" />
+    <Content Include="Markdown\lib\codemirror\mode\tiki\tiki.js" />
+    <Content Include="Markdown\lib\codemirror\mode\toml\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\toml\toml.js" />
+    <Content Include="Markdown\lib\codemirror\mode\tornado\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\tornado\tornado.js" />
+    <Content Include="Markdown\lib\codemirror\mode\turtle\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\turtle\turtle.js" />
+    <Content Include="Markdown\lib\codemirror\mode\vbscript\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\vbscript\vbscript.js" />
+    <Content Include="Markdown\lib\codemirror\mode\vb\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\vb\vb.js" />
+    <Content Include="Markdown\lib\codemirror\mode\velocity\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\velocity\velocity.js" />
+    <Content Include="Markdown\lib\codemirror\mode\verilog\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\verilog\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\verilog\verilog.js" />
+    <Content Include="Markdown\lib\codemirror\mode\xml\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\xml\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\xml\xml.js" />
+    <Content Include="Markdown\lib\codemirror\mode\xquery\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\xquery\test.js" />
+    <Content Include="Markdown\lib\codemirror\mode\xquery\xquery.js" />
+    <Content Include="Markdown\lib\codemirror\mode\yaml\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\yaml\yaml.js" />
+    <Content Include="Markdown\lib\codemirror\mode\z80\index.html" />
+    <Content Include="Markdown\lib\codemirror\mode\z80\z80.js" />
+    <Content Include="Markdown\lib\codemirror\theme\3024-day.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\3024-night.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\ambiance-mobile.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\ambiance.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\base16-dark.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\base16-light.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\blackboard.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\cobalt.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\colorforth.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\eclipse.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\elegant.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\erlang-dark.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\lesser-dark.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\mbo.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\mdn-like.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\midnight.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\monokai.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\neat.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\neo.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\night.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\paraiso-dark.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\paraiso-light.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\pastel-on-dark.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\rubyblue.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\solarized.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\the-matrix.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\tomorrow-night-bright.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\tomorrow-night-eighties.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\twilight.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\vibrant-ink.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\xq-dark.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\xq-light.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\codemirror\theme\zenburn.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\flowchart.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\jquery.flowchart.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\marked.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\prettify.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\raphael.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\sequence-diagram.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\lib\underscore.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\plugins\code-block-dialog\code-block-dialog.js" />
+    <Content Include="Markdown\plugins\emoji-dialog\emoji-dialog.js" />
+    <Content Include="Markdown\plugins\goto-line-dialog\goto-line-dialog.js" />
+    <Content Include="Markdown\plugins\help-dialog\help-dialog.js" />
+    <Content Include="Markdown\plugins\html-entities-dialog\html-entities-dialog.js" />
+    <Content Include="Markdown\plugins\image-dialog\image-dialog.js" />
+    <Content Include="Markdown\plugins\link-dialog\link-dialog.js" />
+    <Content Include="Markdown\plugins\plugin-template.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\plugins\preformatted-text-dialog\preformatted-text-dialog.js" />
+    <Content Include="Markdown\plugins\reference-link-dialog\reference-link-dialog.js" />
+    <Content Include="Markdown\plugins\table-dialog\table-dialog.js" />
+    <Content Include="Markdown\plugins\test-plugin\test-plugin.js" />
+    <Content Include="Markdown\src\editormd.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\bootstrap-test.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\codemirror-searchbox-test.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\codemirror-test.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\css\bootstrap-theme.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\css\bootstrap.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\js\bootstrap.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\js\searchbox.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\katex-tests.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\marked-%40at-test.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\marked-emoji-test.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\marked-heading-link-test.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\marked-todo-list-test.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\qunit\qunit-1.16.0.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Markdown\tests\qunit\qunit-1.16.0.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="assest\style\images\icon1.jpg" />
+    <Resource Include="assest\style\images\icon2.jpg" />
+    <Resource Include="assest\style\images\icon3.jpg" />
+    <Resource Include="assest\style\images\icon4.jpg" />
+    <Content Include="assest\style\images\logo.svg" />
+    <Resource Include="assest\style\images\ren1.jpg" />
+    <Resource Include="assest\style\images\ren2.jpg" />
+    <Resource Include="assest\style\images\ren3.jpg" />
+    <Resource Include="assest\style\images\ren4.jpg" />
+    <Resource Include="assest\style\images\ren5.jpg" />
+    <Resource Include="assest\style\images\ren6.jpg" />
+    <Resource Include="assest\style\images\ren7.jpg" />
+    <Resource Include="assest\style\images\ren8.jpg" />
+    <Content Include="assest\style\js\global.js" />
+    <Content Include="assest\style\js\header.js" />
+    <Content Include="assest\style\js\main.js" />
+    <Content Include="Config\Install\Microsoft.Web.Administration.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Install\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Install\ZoomLa.Model.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Install\ZoomlaCMS_Sites.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\sql.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Config\TemplateRDP.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Config\global.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\model.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="app.config" />
+    <None Include="assest\res\css\zico.css.map" />
+    <None Include="assest\res\css\zico_gov.css.map" />
+    <None Include="assest\res\css\zico_tm.css.map" />
+    <None Include="assest\res\fonts\zi-gov.eot" />
+    <Resource Include="assest\res\fonts\zi-gov.ttf" />
+    <None Include="assest\res\fonts\zi-gov.woff" />
+    <None Include="assest\res\fonts\zi-regular.eot" />
+    <Resource Include="assest\res\fonts\zi-regular.ttf" />
+    <None Include="assest\res\fonts\zi-regular.woff" />
+    <None Include="assest\res\fonts\zi-tm.eot" />
+    <Resource Include="assest\res\fonts\zi-tm.ttf" />
+    <None Include="assest\res\fonts\zi-tm.woff" />
+    <None Include="assest\res\zfont\zFont1.eot" />
+    <Resource Include="assest\res\zfont\zFont1.ttf" />
+    <None Include="assest\res\zfont\zFont1.woff" />
+    <None Include="assest\res\zfont\zFont2.eot" />
+    <Resource Include="assest\res\zfont\zFont2.ttf" />
+    <None Include="assest\res\zfont\zFont2.woff" />
+    <None Include="assest\res\zfont\Zoomlabaoren-A102.eot" />
+    <Resource Include="assest\res\zfont\Zoomlabaoren-A102.ttf" />
+    <None Include="assest\res\zfont\Zoomlabaoren-A102.woff" />
+    <None Include="assest\res\zfont\ZoomlaCarved.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaCarved.ttf" />
+    <None Include="assest\res\zfont\ZoomlaCarved.woff" />
+    <None Include="assest\res\zfont\ZoomlaChongyuan-A006.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaChongyuan-A006.ttf" />
+    <None Include="assest\res\zfont\ZoomlaChongyuan-A006.woff" />
+    <None Include="assest\res\zfont\ZoomlaGaiShiHero-A050.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaGaiShiHero-A050.ttf" />
+    <None Include="assest\res\zfont\ZoomlaGaiShiHero-A050.woff" />
+    <None Include="assest\res\zfont\ZoomlaGetelove-A014.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaGetelove-A014.ttf" />
+    <None Include="assest\res\zfont\ZoomlaGetelove-A014.woff" />
+    <None Include="assest\res\zfont\ZoomlaJinnong-A106.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaJinnong-A106.ttf" />
+    <None Include="assest\res\zfont\ZoomlaJinnong-A106.woff" />
+    <None Include="assest\res\zfont\ZoomlaLingHei-A056.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaLingHei-A056.ttf" />
+    <None Include="assest\res\zfont\ZoomlaLingHei-A056.woff" />
+    <None Include="assest\res\zfont\ZoomlaMalie-A038.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaMalie-A038.ttf" />
+    <None Include="assest\res\zfont\ZoomlaMalie-A038.woff" />
+    <None Include="assest\res\zfont\ZoomlaShuaisong-A028.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaShuaisong-A028.ttf" />
+    <None Include="assest\res\zfont\ZoomlaShuaisong-A028.woff" />
+    <None Include="assest\res\zfont\ZoomlaXiangJiao-A025.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXiangJiao-A025.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXiangJiao-A025.woff" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ.woff" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ2.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ2.otf" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ2.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ2.woff" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ3.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ3.otf" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ3.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ3.woff" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ4.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ4.otf" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ4.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ4.woff" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ5.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ5.otf" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ5.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ5.woff" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ6.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ6.otf" />
+    <Resource Include="assest\res\zfont\ZoomlaXingtiJ6.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXingtiJ6.woff" />
+    <None Include="assest\res\zfont\ZoomlaXSongExtraLight.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXSongExtraLight.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXSongExtraLight.woff" />
+    <None Include="assest\res\zfont\ZoomlaXSongExtraLightsm.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXSongExtraLightsm.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXSongExtraLightsm.woff" />
+    <None Include="assest\res\zfont\ZoomlaXSongExtraLightxs.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaXSongExtraLightxs.ttf" />
+    <None Include="assest\res\zfont\ZoomlaXSongExtraLightxs.woff" />
+    <None Include="assest\res\zfont\ZoomlaYayu-A019.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaYayu-A019.ttf" />
+    <None Include="assest\res\zfont\ZoomlaYayu-A019.woff" />
+    <None Include="assest\res\zfont\Zoomlayinxiangxili-A031.eot" />
+    <Resource Include="assest\res\zfont\Zoomlayinxiangxili-A031.ttf" />
+    <None Include="assest\res\zfont\Zoomlayinxiangxili-A031.woff" />
+    <None Include="assest\res\zfont\ZoomlaYuan-A016.eot" />
+    <Resource Include="assest\res\zfont\ZoomlaYuan-A016.ttf" />
+    <None Include="assest\res\zfont\ZoomlaYuan-A016.woff" />
+    <None Include="assest\style\global.css.map" />
+    <None Include="assest\style\global.scss" />
+    <None Include="assest\style\_zoomlaCMS.scss" />
+    <None Include="Config\Install\Install.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Install\InstallUtil.InstallLog">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Install\Uninstall.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Install\ZoomlaCMS_Sites.InstallLog">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\BUGS.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\CHANGE.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Bold-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Bold-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-BoldItalic-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-BoldItalic-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Italic-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Italic-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Light-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Light-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-LightItalic-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-LightItalic-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Regular-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\docs\fonts\OpenSans-Regular-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\examples\test.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\fonts\editormd-logo.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Markdown\fonts\editormd-logo.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Markdown\fonts\editormd-logo.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\fonts\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Markdown\fonts\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Markdown\fonts\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\fonts\fontawesome-webfont.woff2">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Markdown\fonts\FontAwesome.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Markdown\lib\codemirror\AUTHORS">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\lib\codemirror\bower.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\lib\codemirror\LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\lib\codemirror\package.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\lib\codemirror\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\package.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\plugins\emoji-dialog\emoji.json" />
+    <None Include="Markdown\plugins\help-dialog\help.md" />
+    <None Include="Markdown\plugins\html-entities-dialog\html-entities.json" />
+    <None Include="Markdown\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.codemirror.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.dialog.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.form.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.grid.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.logo.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.menu.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.preview.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.preview.themes.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.tab.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\editormd.themes.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\font-awesome.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\github-markdown.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\lib\prefixes.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\lib\variables.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\scss\prettify.scss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Markdown\test.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{482e5e4e-783c-41c3-86bd-21f3cea93795}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MJTop.Data\MJTop.Data.csproj">
+      <Project>{3d36cdc9-e989-465b-a9f1-ad85dc42f242}</Project>
+      <Name>MJTop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TryOpenXml.Text.Core\TryOpenXml.Text.Core.csproj">
+      <Project>{0461b8aa-baf6-4ed0-9826-046e86463b4e}</Project>
+      <Name>TryOpenXml.Text.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\cef.redist.x64.3.2704.1432\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2704.1432\build\cef.redist.x64.targets')" />
+  <Import Project="..\packages\cef.redist.x86.3.2704.1432\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2704.1432\build\cef.redist.x86.targets')" />
+  <Import Project="..\packages\CefSharp.Common.51.0.0\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.51.0.0\build\CefSharp.Common.targets')" />
+  <Import Project="..\packages\CefSharp.Wpf.51.0.0\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.51.0.0\build\CefSharp.Wpf.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.79.1.36\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.79.1.36\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.79.1.36\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.79.1.36\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets'))" />
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.targets')" />
+  <Import Project="..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

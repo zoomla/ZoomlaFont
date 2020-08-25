@@ -1,0 +1,220 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--自定义窗体外框样式-->
+    <Style x:Key="winStyle" TargetType="Border">
+        <Setter Property="Background" Value="#62AAD8" />
+    </Style>
+
+    <!--窗体标题样式-->
+    <Style x:Key="titleStyle" TargetType="Border">
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Width" Value="Auto"></Setter>
+        <Setter Property="Height" Value="28"></Setter>
+        <Setter Property="DockPanel.Dock" Value="Top"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Padding" Value="10,5,10,5"></Setter>
+    </Style>
+
+    <!--最小化按钮样式-->
+    <Style x:Key="minBtnStyle" TargetType="Button">
+        <Setter Property="Margin" Value="2,0,2,0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Opacity" Value=".75"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Rectangle Width="18" Height="16" Fill="White" Opacity=".1" RadiusX="4" RadiusY="4" StrokeThickness="2"></Rectangle>
+                        <Rectangle Width="18" Height="16" StrokeThickness="2" RadiusX="4" RadiusY="4" Stroke="White"></Rectangle>
+                        <!--按钮内容-->
+                        <Grid>
+                            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                                <Line StrokeThickness="2" Stroke="White" X1="0" Y1="4" X2="8" Y2="4"></Line>
+                            </Canvas>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver"  Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--最大化按钮样式-->
+    <Style x:Key="maxBtnStyle" TargetType="Button">
+        <Setter Property="Margin" Value="2,0,2,0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Opacity" Value=".75"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Rectangle Width="18" Height="16" Fill="White" Opacity=".1" RadiusX="4" RadiusY="4" StrokeThickness="2"></Rectangle>
+                        <Rectangle Width="18" Height="16" StrokeThickness="2" RadiusX="4" RadiusY="4" Stroke="White"></Rectangle>
+                        <!--按钮内容-->
+                        <Grid>
+                            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                                <Line StrokeThickness="2" Stroke="White" X1="0" Y1="0" X2="8" Y2="0"></Line>
+                            </Canvas>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver"  Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--关闭按钮样式-->
+    <Style x:Key="closeBtnStyle" TargetType="Button">
+        <Setter Property="Margin" Value="2,0,2,0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Opacity" Value=".75"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse x:Name="borderBtn" Width="18" Height="18" StrokeThickness="2" Fill="#4f535d" Stroke="White"></Ellipse>
+
+                        <!--按钮内容-->
+                        <Grid>
+                            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                                <Line StrokeThickness="2" Stroke="White" X1="0" Y1="0" X2="8" Y2="8"></Line>
+                                <Line StrokeThickness="2" Stroke="White" X1="0" Y1="8" X2="8" Y2="0"></Line>
+                            </Canvas>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver"  Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--官方网站-->
+    <Style x:Key="btnStyle" TargetType="Button">
+        <Setter Property="Margin" Value="5,5,5,5"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Opacity" Value=".75"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Center" Background="Transparent" Width="{TemplateBinding Width}">
+                            <TextBlock Grid.Column="1" Text="{TemplateBinding Content}"  HorizontalAlignment="Center" Margin="3 0 3 0" Foreground="White"></TextBlock>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver"  Value="True">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="statusTxtStyle" TargetType="TextBlock">
+        <Setter Property="Opacity" Value=".75"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+    </Style>
+    
+    <!--窗口圆角-->
+    <CornerRadius x:Key="winCorner">
+        <CornerRadius.BottomLeft>5</CornerRadius.BottomLeft>
+        <CornerRadius.BottomRight>5</CornerRadius.BottomRight>
+        <CornerRadius.TopLeft>5</CornerRadius.TopLeft>
+        <CornerRadius.TopRight>5</CornerRadius.TopRight>
+    </CornerRadius>
+
+    <!--标题栏圆角-->
+    <CornerRadius x:Key="winTitleCorner">
+        <CornerRadius.BottomLeft>0</CornerRadius.BottomLeft>
+        <CornerRadius.BottomRight>0</CornerRadius.BottomRight>
+        <CornerRadius.TopLeft>0</CornerRadius.TopLeft>
+        <CornerRadius.TopRight>0</CornerRadius.TopRight>
+    </CornerRadius>
+
+    <!--状态栏圆角-->
+    <CornerRadius x:Key="winStatusCorner">
+        <CornerRadius.BottomLeft>5</CornerRadius.BottomLeft>
+        <CornerRadius.BottomRight>5</CornerRadius.BottomRight>
+        <CornerRadius.TopLeft>0</CornerRadius.TopLeft>
+        <CornerRadius.TopRight>0</CornerRadius.TopRight>
+    </CornerRadius>
+    
+    <!--基窗口模板-->
+    <ControlTemplate x:Key="BaseWindowControlTemplate" TargetType="{x:Type Window}">
+        <Grid Width="{Binding ElementName=w, Path=Width}" Height="{Binding ElementName=w, Path=Height}">
+            <Border BorderThickness="5" CornerRadius="6" BorderBrush="#000000" Opacity=".08"></Border>
+            <Border x:Name="borderBg" Margin="5" Background="#62AAD8" BorderBrush="#62AAD8" Opacity="1" BorderThickness="0" CornerRadius="{StaticResource winCorner}" Style="{StaticResource winStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="1"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--标题栏背景色-->
+                    <Border Grid.Row="0" Background="#62AAD8" CornerRadius="{StaticResource winTitleCorner}" Style="{StaticResource titleStyle}"></Border>
+                    <Canvas Grid.Row="2" Background="#62AAD8"></Canvas>
+                    <Border Grid.Row="3" CornerRadius="{StaticResource winStatusCorner}"></Border>
+                </Grid>
+            </Border>
+          
+            <Grid Margin="7">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--标题栏框-->
+                
+                <Border x:Name="borderTitle" Grid.Row="0" CornerRadius="{StaticResource winTitleCorner}" Style="{StaticResource titleStyle}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Grid Background="Transparent">
+                        <TextBlock Text="{Binding ElementName=w, Path=Title}" Foreground="White" Opacity=".75" HorizontalAlignment="Left"></TextBlock>
+                        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"
+                        Orientation="Horizontal">
+                            <!--关闭按钮-->
+                            <Button x:Name="btnMin" Style="{StaticResource minBtnStyle}" ToolTip="最小化"></Button>
+                            <Button x:Name="btnMax" Style="{StaticResource maxBtnStyle}" ToolTip="最大化"></Button>
+                            <Button x:Name="btnClose" Style="{StaticResource closeBtnStyle}" ToolTip="关闭"></Button> 
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <!--内容-->
+                <Grid x:Name="gridContent" Grid.Row="1">
+                    <ContentPresenter />
+                </Grid>
+                
+                <Border Grid.Row="3" CornerRadius="{StaticResource winStatusCorner}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                        <Button x:Name="btnYes" Style="{StaticResource btnStyle}"></Button>
+                        <Button x:Name="btnNo" Style="{StaticResource btnStyle}"></Button>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+        </Grid>
+    </ControlTemplate>
+
+    <!--基窗口样式-->
+    <Style x:Key="BaseWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="Template" Value="{StaticResource BaseWindowControlTemplate}"/>
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="WindowStyle"
+                Value="None" />
+        <Setter Property="AllowsTransparency"
+                Value="True" />
+    </Style>
+</ResourceDictionary>

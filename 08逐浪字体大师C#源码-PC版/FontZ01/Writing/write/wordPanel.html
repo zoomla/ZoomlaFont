@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="../res/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../res/css/font-awesome.min.css"/>
+<style type="text/css">
+*{box-sizing:content-box;-webkit-box-sizing:initial;}
+.tool .color {float:left; margin:5px; width:30px;}
+.tool .color div{width:24px; height:24px; border:solid 2px #aaa; margin-bottom:5px; opacity:0.5;}
+.tool .color div:hover{opacity:1; cursor:pointer;}
+.tool .color .active{opacity:1; border:solid 2px #000;}
+
+.tool .size {float:left; margin:5px; width:30px; margin-left:0;}
+.tool .size div{width:30px; height:30px; border:solid 2px #aaa; margin-bottom:5px; opacity:0.5;}
+.tool .size div:hover{opacity:1; cursor:pointer;}
+.tool .size .active{opacity:1; border:solid 2px #000;}
+.tool .size span{display:block; margin:3px auto; height:24px; background-color:black;}
+.tool .btn{width:70%;margin-bottom:10px;}
+</style>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<script src="../jquery.min.js"></script>
+<script src="../Plugs/canvas2svg.js"></script>
+<title>在线写字</title>
+</head>
+<body>
+    <div class="panel panel-default tool" style="width:120px;position:fixed;left:50px;">
+        <div class="panel-heading"><i class="fa fa-cog"></i> 控制板</div>
+        <div class="panel-body">
+            <div class="color">
+                <div style="background: #000;" data-color="#000"></div>
+                <div style="background: #f00;" data-color="#f00"></div>
+                <div style="background: #0f0;" data-color="#0f0"></div>
+                <div style="background: #00f;" data-color="#00f"></div>
+                <div style="background: #ff0;" data-color="#ff0"></div>
+                <div style="background: #0ff;" data-color="#0ff"></div>
+                <div style="background: #f0f;" data-color="#f0f"></div>
+                <div style="background: #fff;" data-color="#fff"></div>
+            </div>
+            <div class="size">
+                <div data-size="3"><span style="width: 3px;"></span></div>
+                <div data-size="6" class="active"><span style="width: 6px;"></span></div>
+                <div data-size="9" class=""><span style="width: 9px;"></span></div>
+                <div data-size="12" class=""><span style="width: 12px;"></span></div>
+                <div data-size="15" class=""><span style="width: 15px;"></span></div>
+                <div data-size="20"><span style="width: 20px;"></span></div>
+                <div data-size="25" class=""><span style="width: 25px;"></span></div>
+            </div>
+            <input type="button" value="撤消上笔" onclick="hwrite.pen.cancel();" class="btn btn-info" />
+            <input type="button" value="保存图片" onclick="hwrite.help.downimg();" class="btn btn-info" />
+            <input type="button" value="存为SVG" onclick="saveToSvg();" class="btn btn-info" />
+            <input type="button" value="清空画板" onclick="hwrite.help.clear();" class="btn btn-danger" />
+        </div>
+    </div>
+    <div id="canvas_container" class="container" style="position:relative;margin-top:50px;">
+        <canvas id="canvas_main" style="cursor:none;"></canvas>
+    </div>
+<script>
+    //ispress:是否按下开始绘制,pen:画笔相关配置,data:绘图数据,用于重绘时调用
+    var hwrite = { help: {}, canvas: null, ctx: null, pen: { size: 6, color: "#000" }, cfg: { bgcolor: "#fff" }, ispress: false, pos: { x: 0, y: 0 }, data: [] };
+    hwrite.newData = function (d) { return { "sx": hwrite.pos.x, "sy": hwrite.pos.y, "endx": d.x, "endy": d.y, "strokeStyle": hwrite.pen.color, "lineWidth": hwrite.pen.size }; }
+    hwrite.pen.brush = function (pos) {
+        var d = hwrite.help.getpos(pos.x, pos.y);
+        var model = hwrite.newData(d);
+
+        hwrite.pen.brushByModel(hwrite.ctx,model);
+        hwrite.pos = d;
+        hwrite.data.push(model);
+    }
+    hwrite.pen.brushByModel=function(ctx,model)
+    {
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(model.sx, model.sy);
+        ctx.lineTo(model.endx, model.endy);
+        ctx.strokeStyle = model.strokeStyle;
+        ctx.lineWidth = model.lineWidth;
+        ctx.lineCap = "round";//设置或返回线条的结束端点样式
+        ctx.lineJoin = "round";//设置或返回两条线相交时，所创建的拐角类型
+        ctx.stroke();
+        ctx.closePath();
+        ctx.restore();
+    }
+    //撤消上一笔操作
+    hwrite.pen.cancel = function () {
+        for (var i = (hwrite.data.length - 1) ; i > 0; i--) {
+            var model = hwrite.data.pop();
+            if (model.type == "start") {  break; }
+        }
+        hwrite.pen.refresh();
+    }
+    hwrite.pen.refresh = function (conf) {
+        if (!conf) { conf = { panel: true }; }
+        hwrite.ctx.clearRect(0, 0, hwrite.canvas.width, hwrite.canvas.height);
+        if (conf.panel == true) { hwrite.help.drawPanel(); }
+        for (var i = 0; i < hwrite.data.length; i++) {
+            var model = hwrite.data[i];
+            if (model.type && model.type == "start") { continue; }
+            hwrite.pen.brushByModel(hwrite.ctx, hwrite.data[i]);
+        }
+    }
+    hwrite.help.downimg = function () {
+        hwrite.pen.refresh({ panel: false });
+        var MIME_TYPE = "image/png";
+        var imgURL = hwrite.canvas.toDataURL(MIME_TYPE);//base64
+        var dlLink = document.createElement('a');
+        dlLink.download = "预览";
+        dlLink.href = imgURL;
+        dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+        document.body.appendChild(dlLink);
+        dlLink.click();
+        document.body.removeChild(dlLink);
+        hwrite.pen.refresh();
+    }
+    //初始化画板,可根据需要自修改
+    hwrite.help.drawPanel = function () {
+        var ctx = hwrite.ctx;
+        ctx.save();
+
+        var canvasWidth = hwrite.canvas.width;
+        var canvasHeight = hwrite.canvas.height;
+        ctx.fillStyle = hwrite.cfg.bgcolor;
+        ctx.strokeStyle = hwrite.cfg.bgcolor;
+        ctx.beginPath();
+        ctx.rect(0, 0, canvasWidth, canvasHeight);
+        ctx.stroke();
+        ctx.fill();
+        //---------------------
+        ctx.strokeStyle = "red";
+        ctx.beginPath();
+        ctx.moveTo(3, 3);
+        ctx.lineTo(canvasWidth - 3, 3);
+        ctx.lineTo(canvasWidth - 3, canvasHeight - 3);
+        ctx.lineTo(3, canvasHeight - 3);
+        ctx.closePath();
+        ctx.lineWidth = 6;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(canvasWidth, canvasHeight);
+        ctx.moveTo(canvasWidth, 0);
+        ctx.lineTo(0, canvasHeight);
+        ctx.moveTo(canvasWidth / 2, 0);
+        ctx.lineTo(canvasWidth / 2, canvasHeight);
+        ctx.moveTo(0, canvasHeight / 2);
+        ctx.lineTo(canvasWidth, canvasHeight / 2);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.restore();
+    }
+    hwrite.help.clear = function () {
+        hwrite.ctx.clearRect(0, 0, hwrite.canvas.width, hwrite.canvas.height);
+        hwrite.data = [];
+        hwrite.help.drawPanel();
+    }
+    hwrite.help.getpos = function (a,c) {//x,y
+        var b = hwrite.canvas.getBoundingClientRect();//用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
+        return {
+            x: Math.round(a - b.left),
+            y: Math.round(c - b.top)
+        };
+    }
+    //----------------------------------page
+    $(function () {
+        hwrite.canvas = document.getElementById("canvas_main");
+        hwrite.ctx = hwrite.canvas.getContext("2d");
+        hwrite.canvas.height = hwrite.canvas.width = Math.min(600, $(window).width() - 60);
+        hwrite.help.drawPanel();
+        //--------------------------
+        hwrite.canvas.onmousedown = function (e) {
+            e.preventDefault();
+            beginStroke({
+                x: e.clientX,
+                y: e.clientY
+            });
+        };
+        hwrite.canvas.onmouseup = function (e) {
+            e.preventDefault();
+            endStroke();
+        };
+        hwrite.canvas.onmouseout = function (e) {
+            e.preventDefault();
+            hwrite.pen.refresh();
+            endStroke();
+        };
+        hwrite.canvas.onmousemove = function (e) {
+            e.preventDefault();
+            if (hwrite.ispress) { hwrite.pen.brush({ x: e.clientX, y: e.clientY }); }
+            else
+            {
+                hwrite.pen.refresh();
+                var d = hwrite.help.getpos(e.clientX, e.clientY);
+                var ctx = hwrite.ctx;
+                ctx.save();
+
+                ctx.beginPath();
+                //ctx.shadowBlur = 20;//很吃性能,取消
+                //ctx.shadowColor = "black";
+                ctx.fillStyle = hwrite.pen.color;
+                ctx.arc(d.x, d.y, (hwrite.pen.size / 2), 0, Math.PI * 2, true);
+                ctx.fill();
+                ctx.closePath();
+
+                ctx.restore();
+                
+            }
+        };
+        //移动兼容
+        hwrite.canvas.addEventListener("touchstart", function (e) {
+            e.preventDefault();
+            touch = e.touches[0];
+            beginStroke({
+                x: touch.pageX,
+                y: touch.pageY
+            });
+        });
+        hwrite.canvas.addEventListener("touchmove", function (a) {
+            a.preventDefault();
+            if (hwrite.ispress) {
+                touch = a.touches[0];
+                hwrite.pen.brush({
+                    x: touch.pageX,
+                    y: touch.pageY
+                });
+            }
+        });
+        hwrite.canvas.addEventListener("touchend", function (a) {
+            a.preventDefault();
+            endStroke();
+        });
+        //-----------------------------
+        $(".size div").click(function () {
+            $(".size div").removeClass("active");
+            hwrite.pen.size = $(this).data("size");
+            $(this).addClass("active");
+        });
+        $(".color div").click(function () {
+            $(".color div").removeClass("active");
+            hwrite.pen.color = $(this).data("color");
+            $(this).addClass("active");
+        });
+    })
+    //----------------------------------
+    function beginStroke(a) {
+        hwrite.ispress = true;
+        hwrite.pos = hwrite.help.getpos(a.x, a.y);
+        hwrite.data.push({ type: "start" });
+    }
+    function endStroke() {
+        hwrite.ispress = false;
+    }
+    function saveToSvg() {
+        var ctx = C2S(hwrite.canvas.height, hwrite.canvas.width);
+
+        for (var i = 0; i < hwrite.data.length; i++) {
+            var model = hwrite.data[i];
+            if (model.type && model.type == "start") { continue; }
+            hwrite.pen.brushByModel(ctx, hwrite.data[i]);
+        }
+        var svg = ctx.getSerializedSvg(); //true here, if you need to convert named to numbered entities.
+        console.log(svg);
+        //<div id="svg"></div>
+        //var svg = ctx.getSvg();
+        //$("#svg").append(svg);
+    }
+</script>
+</body>
+</html>

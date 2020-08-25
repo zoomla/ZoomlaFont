@@ -1,0 +1,53 @@
+﻿//key:UG93ZXJlZCBieSBab29tbGEh6YCQ5rWqQ01TIHd3d3cuejAxLmNvbQ== 
+//CSS预编译文件基于Sass语法
+//这是Zoomla!逐浪CMS团队优化的Sass模板，我们为你预置了逐浪字库官方团队的高品质webFont之CDN库，你可完全采用中文定义写作，如下面写法都是合格
+//$中国变量之一:12px;
+//$中国人民中华人民共和国变量之二:#ff0;
+//.a1{width:$中国变量之一 ;}
+//.a2{background: $中国人民中华人民共和国变量之二;}
+//建议CSS注释写在代码段的起始处以使阅读更加流畅
+//*这是系统级的引用类,版本：190125
+//主文件引用请使用  @import "zoomlaCMS";
+//@mixin混合引用方，使用@include引用即可
+//继承使用   @extend .ClassName;即可
+//使用帮助:   code.z01.com/sass
+
+// 全统一嵌套共用类
+@charset "utf-8";
+$文字白色阴影: -1px -1px 0 #fff,1px 1px 0 #333,1px 1px 0 #fff;
+$文字白色阴影二:2px 2px 4px #ffffff;
+$文字黑色阴影:1px 2px 2px rgba(0,0,0,1);
+$苹方极细字体: Helvetica Neue,PingFang SC,Microsoft Yahei,\\5FAE\8F6F\96C5\9ED1,STXihei,\\534E\6587\7EC6\9ED1,sans-serif;
+@mixin 五秒消失切换{transition: 0.5s ease-in-out;} //用@include引用即可
+@mixin 文字白影二{text-shadow: 2px 2px 4px #ffffff; }
+@mixin myul{padding-left: 0;margin-bottom:0; list-style: none;}//UL空间清理
+@mixin dflex{display: flex;align-content: center;justify-content: center;align-items: center;} //引用flexbox并指定内部垂直左右居中
+@mixin 段落文本对齐处理{text-align: justify; text-justify: inter-ideograph; overflow: hidden;}
+@mixin 渐变灰色块{ background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6) );}
+@mixin 加微软雅黑定义{font-family: -apple-system,"Microsoft Yahei",BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}
+@mixin 绿色椭圆按钮{display: inline-block; width:8rem; height:3rem; line-height:3rem; background: rgba(13,196,128,1); font-size:1.02rem; color: #fff; text-align: center;border: 1px solid #e0e0e0;border-radius: 100px;}
+@mixin 灰色背景蒙板{position: absolute;   top: 0px;  bottom: 0px;  left: 0px; right: 0px;background-color: rgba(0,0,0,0.4);}//父层必须定义 position: relative
+@mixin weui的footer兼容固底 {position: fixed; bottom: 0;}
+@mixin 清除左边圆角{border-top-left-radius:0;border-bottom-left-radius:0;}
+@mixin 清除右边圆角{border-top-right-radius:0;border-bottom-right-radius:0;}
+@mixin 清除四边圆角{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0;}
+@mixin 清背景边框{background: none;background-color: none; border: none;}
+@mixin 中国风下划线input{border: none;background: none;border-bottom: 1px solid #999;border-radius: 0;}
+@mixin 灰色移动抽屉{  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+@mixin 旋转360度{transform: rotateY(360deg);}
+
+
+//自定义部份
+$欢迎高度:100vh;
+$标题浅蓝:#bee5eb;
+
+
+
+
+
+
+
+
+
+
+

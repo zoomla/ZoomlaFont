@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<!--
+--------------------------------------------------------------------------------------------------------------------
+     ___          _____         _____          ____      _____             ______  
+    /  /\        /  /::\       /  /::\        /  /\:\    | : |            /  /: :\ 
+   /  /::|      /  /:/\:\     /  /:/\:\      /  /\ \:\   | : |           /  /:/ : \
+  /  /:/:|     /  /:/  \:\   /  /:/  \:\    /  /_ \ \ \  | : | ___      /  /:/| : |
+ /  /:/|:|__  /__/:/    \:| /__/:/    \:|  /__/\ \:\ \ \ | : |:  /\    /  /:/_| : |
+/__/:/ |:| /\ \  \:\    /:/ \  \:\    /:/  \  \:\ \:\ \/ | : |  /  /  /  / /..| : |
+\__\/  |:|/:/  \  \:\  /:/   \  \:\  /:/    \  \:\ \:\   | : | /  /  /  / /___| : |
+    |  |:/:/    \  \:\/:/     \  \:\/:/      \  \:\ \/   | : |/  /  /  / /    | : |
+    |  |::/      \  \::/       \  \::/        \  \:\     | : |  /  /  / /     | : |
+    |__|:/        \__\/         \__\/          \__\/     |_:_|_/  /__/_/      |_ /  2006-2020.Shanghai.Zoomla!CMS.Corp    
+ -----------------------------------------------------------------------------------©--------------------------------
+ -->
+<meta charset="utf-8">
+<title>智图管家</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link href="res/css/bootstrap4.min.css" rel="stylesheet"/>
+<link href="res/css/zico.min.css" rel="stylesheet"/>
+<script src="res/js/jquery.min.js"></script>
+<script src="res/vue/vue.min.js"></script>
+<script src="res/vue/vue-route.js"></script>
+<script src="style/js/header.js"></script>
+<script src="style/js/global.js"></script>
+<script src="res/js/bootstrap4.min.js"></script>
+<link href="style/global.css" rel="stylesheet"/>
+</head>
+<body>
+<div>
+<main id="vueApp">
+    <router-view transition-mode="out-in"  v-on:viewIn="onViewIn"></router-view>	
+</main>
+
+<template id="index">
+<div class="i_index">
+<my-header nav1="active"></my-header>
+<div class="i_indexTabs">
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">热图</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">专辑</a>
+	</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show home_list active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+ <ul class="row">
+ <li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_23/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/76.png" alt="IT公司会议"><strong># 多人</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_29/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/80.jpg" alt="太阳下的杯子"><strong># 商业</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_37/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/87.jpg" alt="尽情的天空一望无限的干净"><strong># 天空</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_52/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/516.jpg" alt="北京烤鸭装盘"><strong># 烹饪</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_69/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/168.jpg" alt="冬天的北方河北的一个小区"><strong># 树</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_94/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/134.jpg" alt="婺源汪氏宗亲会今天我们赴上村时家岭脚高处山蛇形准备立碑修理我张家田村84世祖兴公祖坟"><strong># 家居</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_110/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/82.jpg" alt="运动手表"><strong># 奔跑中国</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_118/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/508.jpg" alt="日本友人致谢的明信片"><strong># 中国</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_14/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/55.jpg" alt="JLJ-SY"><strong># 手机壁纸</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_15/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/145.jpg" alt="2020春节南昌站"><strong># 电脑壁纸</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_119/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/148.jpg" alt="供奉在靖国神社中的日本“战神”大村益次郎铜像，铜像下雕刻有文言文汉字"><strong># 外国</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_111/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/84.jpg" alt="户外"><strong># 活动</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_95/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/594.JPG" alt="救护员证"><strong># 书</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_70/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/669.jpg" alt="一种食物的叶筋"><strong># 叶</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_53/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/109.jpg" alt="水果近物梨的拍摄"><strong># 水果蔬菜</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_38/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9204.jpg" alt="2018年12月西藏之行照片042"><strong># 山谷公园</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_30/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/629.jpg" alt="MAC"><strong># 电脑</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_24/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/133.jpg" alt="共产党员先进事迹"><strong># 男人</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_25/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9302.jpg" alt="汉装女子"><strong># 女人</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_31/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/631.jpg" alt="智能手机"><strong># 手机</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_54/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/582.JPG" alt="清明艾果"><strong># 面食</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_62/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/623.JPG" alt="夜晚飞机"><strong># 飞机</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_71/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/591.JPG" alt="乡间油菜花"><strong># 花</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_80/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/664.jpg" alt="四个打碎的鸡蛋用于烹饪"><strong># 鸟鸡家禽等</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_96/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/596.JPG" alt="红钱之字"><strong># 钱</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_112/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/169.jpg" alt="山东威海的海边"><strong># 滑雪</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_120/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/147.jpg" alt="运动字体设计"><strong># 其它</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_113/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/601.JPG" alt="我要飞起来"><strong># 球类</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_81/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/585.JPG" alt="午休的犀牛"><strong># 马</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_63/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/626.JPG" alt="脚蹬自行车"><strong># 自行车</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_55/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9267.jpeg" alt="一堆奶糖食品"><strong># 糖果</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_26/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/78.jpg" alt="学习的少年"><strong># 孩子</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_19/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/125.jpg" alt="2020年春节南昌人少的车站场景 (1)"><strong># 车站</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_20/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/120.jpg" alt="依然还在游牧的蒙古牧民"><strong># 游乐场</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_41/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/575.JPG" alt="医者匠心"><strong># 海</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_64/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/574.jpg" alt="两个土豪在帆船酒店的好伙伴"><strong># 帆船</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_73/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/595.JPG" alt="坚强的小草"><strong># 草</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_114/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/83.jpg" alt="马拉松跑手"><strong># 比赛</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_115/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/85.jpg" alt="美食"><strong># 游戏</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_83/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/599.JPG" alt="鱼群"><strong># 鱼</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_74/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/111.jpg" alt="兰花盆栽 (2)"><strong># 绿色</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_57/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/682.jpg" alt="一个大火锅贤合庄"><strong># 火锅餐饮</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_42/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/578.JPG" alt="日暮的小花园"><strong># 日出日落</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_34/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/627.JPG" alt="字体设计师的笔记和黄色钢笔白色桌子01"><strong># 笔</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_21/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/163.jpg" alt="拜月亭北方的一处风景户外"><strong># 餐厅</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_22/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/166.jpg" alt="福祉绵长河北一处风景古建区"><strong># 路桥</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_35/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/81.jpg" alt="商业办公桌面与电脑"><strong># 设备</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_43/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/581.JPG" alt="千年灵芝"><strong># 沙滩</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_75/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/167.jpg" alt="草地春天的北方"><strong># 草坪</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_116/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/170.jpg" alt="威海广角大图的海边"><strong># 竞技体育</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_117/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/171.jpg" alt="威海有历史的岛"><strong># 游泳</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_85/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9322.jpg" alt="幼小的蜗牛"><strong># 蜗牛</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_67/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/573.png" alt="运输队长在山景下的拍照"><strong># 运输</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_59/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9266.jpg" alt="加班去带上一箱可乐"><strong># 酒和饮料</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_44/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9699.jpg" alt="病毒驱散等待花开"><strong># 草原草地</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_45/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/580.JPG" alt="生活的家庭如同沙漠爱如绿洲"><strong># 沙漠</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_68/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9323.jpg" alt="春天的绿树街道"><strong># 街道指示路标</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_77/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/635.jpg" alt="江南的野外茵菇"><strong># 雏菊</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_102/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/632.jpg" alt="篝火"><strong># 蜡烛</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_87/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/79.jpg" alt="天鹅"><strong># 宠物</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_46/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/579.JPG" alt="仿森林小山景"><strong># 森林悬崖</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_47/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/577.JPG" alt="庐山瀑布"><strong># 瀑布</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_88/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9301.jpg" alt="游动的水母"><strong># 水母</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_104/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/143.jpg" alt="20200118农村宴席 (9)"><strong># 灯笼</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_105/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/683.jpg" alt="一桶中国大米蓝色的桶装着"><strong># 各类用品</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_48/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9327.jpg" alt="黄母余氏之茔墓"><strong># 岩石</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_49/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9252.jpg" alt="竹笋近景"><strong># 山川林地</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_106/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/634.jpg" alt="高端花瓷碗"><strong># 碗</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_107/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/162.jpg" alt="公益演唱会现场激情表演的夜 (2)"><strong># 酒瓶</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_91/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/583.JPG" alt="你是羚羊吗"><strong># 大象</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_50/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9702.jpg" alt="月亮有点园"><strong># 夜景</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_51/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/592.JPG" alt="五十号咖啡馆"><strong># 烟花</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_109/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/104.jpg" alt="中国陶瓷茶具"><strong># 瓶子</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_93/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9163.jpg" alt="猫鼬"><strong># 野生动物</strong></a></li>
+<li class="col-md-3 col-6"><div class="home_list_mask"></div>
+<a href="https://p.ziti163.com/Class_123/Default"><img src="https://p.ziti163.com/UploadFiles/PicsThumb/9870.jpg" alt="刚挖出来的虫草"><strong># 药品滋补养生</strong></a></li>
+</ul>   
+</div>
+  <div class="tab-pane home_ren fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+  
+<div class="row">
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren3.jpg" alt="梦颖">
+	  <h5>梦颖</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_1/NodePage?author=%E6%A2%A6%E9%A2%96" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren2.jpg" alt="小末">
+	  <h5>小末</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_1/NodePage?author=%E5%B0%8F%E6%9C%AB" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren1.jpg" alt="山东上格科技">
+	  <h5>山东上格科技</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_1/NodePage?author=%E5%B1%B1%E4%B8%9C%E4%B8%8A%E6%A0%BC%E7%A7%91%E6%8A%80" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren4.jpg" alt="T2SanR">
+	  <h5>T2SanR</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_1/NodePage?author=T2SanR" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren5.jpg" alt="BG5IPD">
+	  <h5>BG5IPD</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_1/NodePage?author=BG5IPD" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren6.jpg" alt="老Tan酸菜">
+	  <h5>老Tan酸菜</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_1/NodePage?author=%E8%80%81Tan%E9%85%B8%E8%8F%9C" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren7.jpg" alt="发哥">
+	  <h5>发哥</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_1/NodePage?author=%E5%8F%91%E5%93%A5" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="HomeLogin_renPanel">
+	<div class="HomeLogin_ren_head"></div>
+	  <img class="HomeLogin_renImg" src="style/images/ren8.jpg" alt="江西数码摄影协会">
+	  <h5>江西数码摄影协会</h5>
+	  <p></p>
+	  <a href="https://p.ziti163.com/Class_126/Default" target="_blank" class="btn btn-outline-danger btn-sm card-title">
+		查看他的主页
+	  </a>
+  </div>
+</div>
+
+  
+  
+  </div>
+  
+  </div>
+</div>
+</div>
+</div>
+</template>
+<!--home end-->
+
+<template id="photo">
+<div class="i_photo">
+<my-header nav2="active"></my-header>
+<div class="i_photoBox">
+<a href="http://p1.z01.com:9822/Class_1/NodeNews?n=老Tan酸菜" target="_blank" class="d-block btn btn-outline-danger btn-lg"><i class="zi zi_clouddownloadalt zi_bounce"></i> 点击进入老Tan酸菜的图片下载专用通道|-&gt;</a>
+</div>
+</div>
+</template>
+<!--photo end-->
+
+<template id="ai">
+<div class="i_ai">
+<my-header nav3="active"></my-header>
+<div class="container-xl i_aiBox">
+<form id="form1" enctype="multipart/form-data" method="post" action="Upload.aspx">
+	<h1>智能识图-卓越不凡</h1>
+        <label for="fileToUpload">选择一张本地图片：</label><br>
+        <input type="file" name="fileToUpload" class="btn btn-outline-danger" id="fileToUpload" onchange="fileSelected();">
+    <div id="fileName"></div>
+    <div id="fileSize"></div>
+    <div id="fileType"></div>
+	<div class="btn-group" role="group" aria-label="">
+    <input type="button" class="btn btn-danger" onclick="uploadFile()" value="上传图片到云端">
+	<a href="#" class="btn btn-secondary">进智图官网体验视觉功能</a>
+	</div>
+    <div id="progressNumber"></div>
+</form>
+</div>
+</div>
+</template>
+<!--ai end-->
+
+<template id="font">
+<div class="i_font">
+<my-header nav4="active"></my-header>
+<!--<h1>逐浪字库-技术驱动+中国首个基于UniCode 13标准构建的字体厂商</h1>-->
+<h2>经典字库</h2>
+
+
+<div class="container-xl i_fontList">
+<ul class="row">
+<li><a href="http://f.ziti163.com/Item/179.aspx"><span class="f1">永</span>逐浪新宋体-超细</a></li>
+<li><a href="http://f.ziti163.com/Item/178.aspx"><span class="f2">永</span>逐浪丫玉体</a></li>
+<li><a href="http://f.ziti163.com/Item/189.aspx"><span class="f3">永</span>逐浪报人书法体</a></li>
+<li><a href="http://f.ziti163.com/Item/175.aspx"><span class="f4">永</span>逐浪圆体</a></li>
+<li><a href="http://f.ziti163.com/Item/162.aspx"><span class="f5">永</span>逐浪经典粗黑体</a></li>
+<li><a href="http://f.ziti163.com/Class_8/Default.aspx"><span class="f6">永</span>逐浪伟人毛体</a></li>
+<li><a href="http://f.ziti163.com/Item/186.aspx"><span class="f7">永</span> 逐浪时尚钢笔体</a></li>
+<li><a href="http://f.ziti163.com/Item/173.aspx"><span class="f8">永</span> 逐浪哥特真爱体</a></li>
+<li><a href="http://f.ziti163.com/Item/165.aspx"><span class="f9">永</span> 逐浪重圆体</a></li>
+<li><a href="http://f.ziti163.com/Item/185.aspx"><span class="f10">永</span>逐浪新湘教钢笔体</a></li>
+<li><a href="http://f.ziti163.com/Item/185.aspx"><span class="f11">永</span>逐浪海棠居刻本字</a></li>
+<li><a href="http://f.ziti163.com/Item/185.aspx"><span class="f12">永</span>逐浪金农书法体</a></li>
+<li><a href="http://f.ziti163.com/Item/185.aspx"><span class="f13">永</span>逐浪印象细立体</a></li>
+<li><a href="http://f.ziti163.com/Item/185.aspx"><span class="f14">永</span>逐浪帅宋斜楷体</a></li>
+<li><a href="http://f.ziti163.com/Item/185.aspx"><span class="f15">永</span>逐浪菱黑体</a></li>
+<li><a href="http://f.ziti163.com/Item/185.aspx"><span class="f16">永</span>逐浪盖世英雄狂草书</a></li>
+
+</ul>
+</div>
+<a href="#" onclick="call.sys.openurl('https://ziti163.com/Class_16/Default.aspx')"><div class="home_productMore">更多 <i class="fa fa-angle-right"></i></div></a>
+
+
+</div>
+</template>
+<!--i_fontList end-->
+
+<template id="apps">
+<div class="i_apps">
+<my-header nav5="active"></my-header>
+<div class="container-xl i_appsList">
+<h1>体验逐浪智图的卓越应用</h1>
+<ul  class="row">
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('https://tool.73ic.com/tool/tool_jzzh.html')"><i class="zi zi_vials"></i> <span>进制转换工具</span></a></div></li>
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('https://dict.ziti163.com/index.shtml')"><i class="zi zi_textbook"></i> <span>字典</span></a></div></li>
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('http://code.z01.com/Emmet/')"><i class="zi zi_tmCss3"></i> <span>Emmet语法</span></a></div></li>
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('http://ad.z01.com/color.html')"><i class="zi zi_tachometeralt"></i> <span>网页配色</span></a></div></li>
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('http://ico.z01.com')"><i class="zi zi_tmZiti163"></i> <span>zico图标系统</span></a></div></li>
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('https://tool.73ic.com/Item/59.aspx')"><i class="zi zi_tmHtml5"></i> <span>HTML5标签大全</span></a></div></li>
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('http://help.z01.com/tool/')"><i class="zi zi_filealt"></i> <span>IIS智能工具</span></a></div></li>
+<li class="col-md-3"><div class="i_appsList_box"><a class=""  href="#" onclick="call.sys.openurl('http://help.z01.com/tool/boot.html')"><i class="zi zi_xzjz"></i> <span>BootStrap建模工具</span></a></div></li>
+
+</ul>
+</div>
+</div>
+</template>
+<!--apps end-->
+
+<template id="setting">
+<div class="i_setting">
+<my-header nav6="active"></my-header>
+<div class="i_settingBox">
+系统已智能优化完成,无需再设置。
+</div>
+<!--
+<div class="container-xl">
+<h1>setting设置中心</h1>
+	<table>
+		<tr>
+			<td>图片保存目录</td>
+			<td><input id="ImgSavePath" type="text" value="" /></td>
+		</tr>
+	</table>
+	<input type="button" class="btn btn-info" value="保 存" onclick="UpdateConfig()" />
+</div>
+-->
+	
+	
+</div>
+</template>
+<!--setting end-->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="container-xl">
+	<table>
+		<tr>
+			<td>图片保存目录</td>
+			<td><input id="ImgSavePath" type="text" value="" /></td>
+		</tr>
+	</table>
+	<input type="button" class="btn btn-info" value="保 存" onclick="UpdateConfig()" />
+</div>
+-->
+
+
+
+<script>
+function DownloadMsg(){
+	//自动加载模态框
+	$('#exampleModal').modal({});
+}
+</script>
+
+<footer class="fixed-bottom">
+<a href="javascript:;" onclick="call.sys.opendev();">&copy;</a>2020 字体网ziti163.com 版权所有 基于<a href="http://www.z01.com">Zoomla!逐浪CMS内核</a> <a href="#" onclick="call.sys.openurl('http://www.73ic.com')">73ic去上云提供云计算服务</a>
+</footer>
+
+</div>
+<script src="style/js/main.js"></script>
+
+<script>
+var app = new Vue({
+	el: '#app',
+	data: {
+		message: 'Hello Vue!',
+		name : "Vue"
+	}
+});
+
+//sitting
+window.onload = function () {
+	let config = chrome.GetConfig();
+	debugger;
+	config.then((v) => {
+		let data = $.parseJSON(v);
+		$("#ImgSavePath").val(data.ImgSavePath);
+	});
+}
+function UpdateConfig() {
+	debugger;
+	let val1 = $("#ImgSavePath").val();
+	let data = { ImgSavePath: val1 }
+
+	chrome.UpdateConfig(JSON.stringify(data)).then((v) => {
+		if (v) {
+			alert("保存成功");
+		} else {
+			alert("保持失败");
+			console.log(v);
+		}
+	});
+}
+
+
+function fileSelected() {
+    var file = document.getElementById('fileToUpload').files[0];
+    if (file) {
+        var fileSize = 0;
+        if (file.size > 1024 * 1024)
+            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+        else
+            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+        document.getElementById('图片名称').innerHTML = 'Name: ' + file.name;
+        document.getElementById('图片规格').innerHTML = 'Size: ' + fileSize;
+        document.getElementById('图处类型').innerHTML = 'Type: ' + file.type;
+    }
+}
+
+function uploadFile() {
+    var fd = new FormData();
+    fd.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+    var xhr = new XMLHttpRequest();
+    xhr.upload.addEventListener("progress", uploadProgress, false);
+    xhr.addEventListener("load", uploadComplete, false);
+    xhr.addEventListener("error", uploadFailed, false);
+    xhr.addEventListener("abort", uploadCanceled, false);
+    xhr.open("POST", "upload.do"); //修改成自己的接口
+    xhr.send(fd);
+}
+
+function uploadProgress(evt) {
+    if (evt.lengthComputable) {
+        var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+        document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
+    } else {
+        document.getElementById('progressNumber').innerHTML = 'unable to compute';
+    }
+}
+
+function uploadComplete(evt) {
+    /* 服务器端返回响应时候触发event事件*/
+    alert(evt.target.responseText);
+}
+
+function uploadFailed(evt) {
+    alert("高端企业级用户特权-未获得接口权限");
+}
+
+function uploadCanceled(evt) {
+    alert("The upload has been canceled by the user or the browser dropped the connection.");
+}
+
+$(function() {
+
+    var myDate = new Date;
+    var year = myDate.getFullYear(); //获取当前年
+    var mon = myDate.getMonth() + 1; //获取当前月
+    var date = myDate.getDate(); //获取当前日
+    // var h = myDate.getHours();//获取当前小时数(0-23)
+    // var m = myDate.getMinutes();//获取当前分钟数(0-59)
+    // var s = myDate.getSeconds();//获取当前秒
+    var week = myDate.getDay();
+    var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    console.log(year, mon, date, weeks[week])
+    $("#time").html(year + "年" + mon + "月" + date + "日" + weeks[week]);
+})
+
+
+
+
+</script>
+</body>
+</html>

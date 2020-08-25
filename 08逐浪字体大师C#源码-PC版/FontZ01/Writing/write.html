@@ -1,0 +1,607 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>逐浪字体大师</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="Generator" content="Zoomla!逐浪®CMS">
+<meta name="Author" content="去上云73ic.com">
+<meta name="Others" content="字体呈现基于逐浪字库f.ziti163.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="res/css/bootstrap5.min.css" />
+<link rel="stylesheet" type="text/css" href="res/css/swiper.min.css" />
+<link rel="stylesheet" type="text/css" href="res/css/zico.min.css" />
+<link rel="stylesheet" type="text/css" href="style/global.css" />
+<script src="res/js/bootstrap5.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="res/js/swiper.min.js"></script>
+<script src="res/vue/vue.min.js"></script>
+<script src="res/vue/vue-route.js"></script>
+<script src="res/js/global.js"></script>
+</head>
+<body>
+<div id="app">
+<router-view></router-view>
+</div>
+
+<template id="font0">
+<div>
+<div class="container-xl fontbox">
+    <div class="fontbox_demo">中</div>
+    <div class="panel panel-default tool">
+        <div class="panel-heading"><i class="fa fa-cog"></i> 控制板</div>
+        <div class="panel-body">
+            <div class="color">
+                <div style="background: #000;" data-color="#000"></div>
+                <div style="background: #f00;" data-color="#f00"></div>
+                <div style="background: #0f0;" data-color="#0f0"></div>
+                <div style="background: #00f;" data-color="#00f"></div>
+                <div style="background: #ff0;" data-color="#ff0"></div>
+                <div style="background: #0ff;" data-color="#0ff"></div>
+                <div style="background: #f0f;" data-color="#f0f"></div>
+                <div style="background: #fff;" data-color="#fff"></div>
+            </div>
+            <div class="size">
+                <div data-size="3"><span style="width: 3px;"></span></div>
+                <div data-size="6" class="active"><span style="width: 6px;"></span></div>
+                <div data-size="9" class=""><span style="width: 9px;"></span></div>
+                <div data-size="12" class=""><span style="width: 12px;"></span></div>
+                <div data-size="15" class=""><span style="width: 15px;"></span></div>
+                <div data-size="20"><span style="width: 20px;"></span></div>
+                <div data-size="25" class=""><span style="width: 25px;"></span></div>
+            </div>
+            <input type="button" value="撤消上笔" onclick="hwrite.pen.cancel();" class="btn btn-info" />
+            <input type="button" value="保存创作" onclick="downimg();" class="btn btn-info" />
+            <input type="button" value="存为SVG" onclick="saveToSvg();" class="btn btn-info" />
+            <input type="button" value="清空画板" onclick="hwrite.help.clear();" class="btn btn-danger" />
+        </div>
+    </div>
+    <div id="canvas_container" class="" style="position:relative;margin-top:50px;transform: translateX(362px);">
+        <canvas id="canvas_main" style="cursor:none;"></canvas>
+    </div>
+</div>
+</div>
+</template>
+
+
+<template id="font1">
+<div>
+    <div class="container-xl fontbox">
+        <div class="fontbox_demo">国</div>
+        <div class="panel panel-default tool">
+            <div class="panel-heading"><i class="fa fa-cog"></i> 控制板</div>
+            <div class="panel-body">
+                <div class="color">
+                    <div style="background: #000;" data-color="#000"></div>
+                    <div style="background: #f00;" data-color="#f00"></div>
+                    <div style="background: #0f0;" data-color="#0f0"></div>
+                    <div style="background: #00f;" data-color="#00f"></div>
+                    <div style="background: #ff0;" data-color="#ff0"></div>
+                    <div style="background: #0ff;" data-color="#0ff"></div>
+                    <div style="background: #f0f;" data-color="#f0f"></div>
+                    <div style="background: #fff;" data-color="#fff"></div>
+                </div>
+                <div class="size">
+                    <div data-size="3"><span style="width: 3px;"></span></div>
+                    <div data-size="6" class="active"><span style="width: 6px;"></span></div>
+                    <div data-size="9" class=""><span style="width: 9px;"></span></div>
+                    <div data-size="12" class=""><span style="width: 12px;"></span></div>
+                    <div data-size="15" class=""><span style="width: 15px;"></span></div>
+                    <div data-size="20"><span style="width: 20px;"></span></div>
+                    <div data-size="25" class=""><span style="width: 25px;"></span></div>
+                </div>
+                <input type="button" value="撤消上笔" onclick="hwrite.pen.cancel();" class="btn btn-info" />
+                <input type="button" value="保存创作" onclick="downimg();" class="btn btn-info" />
+                <input type="button" value="存为SVG" onclick="saveToSvg();" class="btn btn-info" />
+                <input type="button" value="清空画板" onclick="hwrite.help.clear();" class="btn btn-danger" />
+            </div>
+        </div>
+        <div id="canvas_container" class="" style="position:relative;margin-top:50px; transform: translateX(362px)">
+            <canvas id="canvas_main" style="cursor:none;"></canvas>
+        </div>
+    </div>
+</div>
+</template>
+
+<template id="font2">
+<div>
+    <div class="container-xl fontbox">
+        <div class="fontbox_demo">梦</div>
+        <div class="panel panel-default tool">
+            <div class="panel-heading"><i class="fa fa-cog"></i> 控制板</div>
+            <div class="panel-body">
+                <div class="color">
+                    <div style="background: #000;" data-color="#000"></div>
+                    <div style="background: #f00;" data-color="#f00"></div>
+                    <div style="background: #0f0;" data-color="#0f0"></div>
+                    <div style="background: #00f;" data-color="#00f"></div>
+                    <div style="background: #ff0;" data-color="#ff0"></div>
+                    <div style="background: #0ff;" data-color="#0ff"></div>
+                    <div style="background: #f0f;" data-color="#f0f"></div>
+                    <div style="background: #fff;" data-color="#fff"></div>
+                </div>
+                <div class="size">
+                    <div data-size="3"><span style="width: 3px;"></span></div>
+                    <div data-size="6" class="active"><span style="width: 6px;"></span></div>
+                    <div data-size="9" class=""><span style="width: 9px;"></span></div>
+                    <div data-size="12" class=""><span style="width: 12px;"></span></div>
+                    <div data-size="15" class=""><span style="width: 15px;"></span></div>
+                    <div data-size="20"><span style="width: 20px;"></span></div>
+                    <div data-size="25" class=""><span style="width: 25px;"></span></div>
+                </div>
+                <input type="button" value="撤消上笔" onclick="hwrite.pen.cancel();" class="btn btn-info" />
+                <input type="button" value="保存创作" onclick="downimg();" class="btn btn-info" />
+                <input type="button" value="存为SVG" onclick="saveToSvg();" class="btn btn-info" />
+                <input type="button" value="清空画板" onclick="hwrite.help.clear();" class="btn btn-danger" />
+            </div>
+        </div>
+        <div id="canvas_container" class="" style="position:relative;margin-top:50px; transform: translateX(372px)">
+            <canvas id="canvas_main" style="cursor:none;"></canvas>
+        </div>
+    </div>  
+</div>
+</template>
+<template id="font3">
+<div>
+    <div class="container-xl fontbox">
+        <div class="fontbox_demo">逐</div>
+        <div class="panel panel-default tool">
+            <div class="panel-heading"><i class="fa fa-cog"></i> 控制板</div>
+            <div class="panel-body">
+                <div class="color">
+                    <div style="background: #000;" data-color="#000"></div>
+                    <div style="background: #f00;" data-color="#f00"></div>
+                    <div style="background: #0f0;" data-color="#0f0"></div>
+                    <div style="background: #00f;" data-color="#00f"></div>
+                    <div style="background: #ff0;" data-color="#ff0"></div>
+                    <div style="background: #0ff;" data-color="#0ff"></div>
+                    <div style="background: #f0f;" data-color="#f0f"></div>
+                    <div style="background: #fff;" data-color="#fff"></div>
+                </div>
+                <div class="size">
+                    <div data-size="3"><span style="width: 3px;"></span></div>
+                    <div data-size="6" class="active"><span style="width: 6px;"></span></div>
+                    <div data-size="9" class=""><span style="width: 9px;"></span></div>
+                    <div data-size="12" class=""><span style="width: 12px;"></span></div>
+                    <div data-size="15" class=""><span style="width: 15px;"></span></div>
+                    <div data-size="20"><span style="width: 20px;"></span></div>
+                    <div data-size="25" class=""><span style="width: 25px;"></span></div>
+                </div>
+                <input type="button" value="撤消上笔" onclick="hwrite.pen.cancel();" class="btn btn-info" />
+                <input type="button" value="保存创作" onclick="downimg();" class="btn btn-info" />
+                <input type="button" value="存为SVG" onclick="saveToSvg();" class="btn btn-info" />
+                <input type="button" value="清空画板" onclick="hwrite.help.clear();" class="btn btn-danger" />
+            </div>
+        </div>
+        <div id="canvas_container" class="" style="position:relative;margin-top:50px; transform: translateX(385px)">
+            <canvas id="canvas_main" style="cursor:none;"></canvas>
+        </div>
+    </div>  
+</div>
+</template>
+<template id="font4">
+<div>
+    <div class="container-xl fontbox">
+        <div class="fontbox_demo">浪</div>
+        <div class="panel panel-default tool">
+            <div class="panel-heading"><i class="fa fa-cog"></i> 控制板</div>
+            <div class="panel-body">
+                <div class="color">
+                    <div style="background: #000;" data-color="#000"></div>
+                    <div style="background: #f00;" data-color="#f00"></div>
+                    <div style="background: #0f0;" data-color="#0f0"></div>
+                    <div style="background: #00f;" data-color="#00f"></div>
+                    <div style="background: #ff0;" data-color="#ff0"></div>
+                    <div style="background: #0ff;" data-color="#0ff"></div>
+                    <div style="background: #f0f;" data-color="#f0f"></div>
+                    <div style="background: #fff;" data-color="#fff"></div>
+                </div>
+                <div class="size">
+                    <div data-size="3"><span style="width: 3px;"></span></div>
+                    <div data-size="6" class="active"><span style="width: 6px;"></span></div>
+                    <div data-size="9" class=""><span style="width: 9px;"></span></div>
+                    <div data-size="12" class=""><span style="width: 12px;"></span></div>
+                    <div data-size="15" class=""><span style="width: 15px;"></span></div>
+                    <div data-size="20"><span style="width: 20px;"></span></div>
+                    <div data-size="25" class=""><span style="width: 25px;"></span></div>
+                </div>
+                <input type="button" value="撤消上笔" onclick="hwrite.pen.cancel();" class="btn btn-info" />
+                <input type="button" value="保存创作" onclick="downimg();" class="btn btn-info" />
+                <input type="button" value="存为SVG" onclick="saveToSvg();" class="btn btn-info" />
+                <input type="button" value="清空画板" onclick="hwrite.help.clear();" class="btn btn-danger" />
+            </div>
+        </div>
+        <div id="canvas_container" class="" style="position:relative;margin-top:50px; transform: translateX(379px)">
+            <canvas id="canvas_main" style="cursor:none;"></canvas>
+        </div>
+    </div>  
+</div>
+</template>
+<template id="font5">
+<div>
+    <div class="container-xl fontbox">
+        <div class="fontbox_demo" style="text-align:center;">人</div>
+        <div class="panel panel-default tool">
+            <div class="panel-heading"><i class="fa fa-cog"></i> 控制板</div>
+            <div class="panel-body">
+                <div class="color">
+                    <div style="background: #000;" data-color="#000"></div>
+                    <div style="background: #f00;" data-color="#f00"></div>
+                    <div style="background: #0f0;" data-color="#0f0"></div>
+                    <div style="background: #00f;" data-color="#00f"></div>
+                    <div style="background: #ff0;" data-color="#ff0"></div>
+                    <div style="background: #0ff;" data-color="#0ff"></div>
+                    <div style="background: #f0f;" data-color="#f0f"></div>
+                    <div style="background: #fff;" data-color="#fff"></div>
+                </div>
+                <div class="size">
+                    <div data-size="3"><span style="width: 3px;"></span></div>
+                    <div data-size="6" class="active"><span style="width: 6px;"></span></div>
+                    <div data-size="9" class=""><span style="width: 9px;"></span></div>
+                    <div data-size="12" class=""><span style="width: 12px;"></span></div>
+                    <div data-size="15" class=""><span style="width: 15px;"></span></div>
+                    <div data-size="20"><span style="width: 20px;"></span></div>
+                    <div data-size="25" class=""><span style="width: 25px;"></span></div>
+                </div>
+                <input type="button" value="撤消上笔" onclick="hwrite.pen.cancel();" class="btn btn-info" />
+                <input type="button" value="保存创作" onclick="downimg();" class="btn btn-info" />
+                <input type="button" value="存为SVG" onclick="saveToSvg();" class="btn btn-info" />
+                <input type="button" value="清空画板" onclick="hwrite.help.clear();" class="btn btn-danger" />
+
+            </div>
+        </div>
+        <div id="canvas_container" class="" style="position:relative;margin-top:50px;transform:translateX(379px)">
+            <canvas id="canvas_main" style="cursor:none;"></canvas>
+        </div>
+    </div>  
+</div>
+</template>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">提示</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">开放版本无法保存作品，如要继续创作，请登录<a href="http://v.ziti163.com" target="_blank">http://v.ziti163.com</a>官网创作。</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" onclick="Quote()">继续写作</button>
+                <a class="btn btn-primary"  href="#" onclick="call.sys.openurl('http://v.ziti163.com')"><i class="zi zi_vials"></i> <span>去官网创作</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="font_suoyin">
+<div>
+  <div class="swiper-container  font_suoyin_show">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide font_suoyin_show01"><span>永<p>逐浪金农书法体</p></span></div>
+      <div class="swiper-slide font_suoyin_show02"><span>永<p>逐浪湘教钢笔体</p></span></div>
+      <div class="swiper-slide font_suoyin_show03"><span>永<p>逐浪新宋极细体</p></span></div>
+      <div class="swiper-slide font_suoyin_show04"><span>永<p>逐浪丫玉体</p></span></div>
+      <div class="swiper-slide font_suoyin_show05"><span>永<p>逐浪报人书法体</p></span></div>
+      <div class="swiper-slide font_suoyin_show06"><span>永<p>逐浪圆体</p></span></div>
+      <div class="swiper-slide font_suoyin_show07"><span>永<p>逐浪经典粗黑体</p></span></div>
+      <div class="swiper-slide font_suoyin_show08"><span>永<p>逐浪伟人毛体</p></span></div>
+      <div class="swiper-slide font_suoyin_show09"><span>永<p>逐浪时尚钢笔体</p></span></div>
+      <div class="swiper-slide font_suoyin_show10"><span>永<p>逐浪哥特真爱体</p></span></div>
+      <div class="swiper-slide font_suoyin_show11"><span>永<p>逐浪重圆体</p></span></div>
+      <div class="swiper-slide font_suoyin_show12"><span>永<p>逐浪盖世英雄狂草书</p></span></div>
+      <div class="swiper-slide font_suoyin_show13"><span>永<p>逐浪海棠居刻本字</p></span></div>
+      <div class="swiper-slide font_suoyin_show14"><span>永<p>逐浪马列大楷体</p></span></div>
+      <div class="swiper-slide font_suoyin_show15"><span>永<p>逐浪帅宋斜楷</p></span></div>
+      <div class="swiper-slide font_suoyin_show16"><span>永<p>逐浪印象细立体</p></span></div>
+      <div class="swiper-slide font_suoyin_show17"><span>永<p>逐浪菱黑体</p></span></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+<a href="#" onclick="call.sys.openurl('http://f.ziti163.com')" class="font_suoyin_more"><i class="zi zi_circleRight zi_load"></i>需要等候30秒加载|更多请移步逐浪字库官网</a>
+</div>
+</template>
+<!-- font_suoyin end -->
+
+<template id="font_myfont">
+<div>
+111
+	<script>
+    	function countDown(secs, surl) {
+			var jumpTo = document.getElementById('jumpTo');
+			jumpTo.innerHTML = '<div style="position:fixed;left:30%;top:40%;margin-left:width/2;margin-top:height/2; font-size:20px;">登录界面关闭，请通过Baidu链接登录，<font color="red"><b>' + secs + '</b></font> 秒后进入XX系统！</div>';
+			if (--secs > 0) {
+				setTimeout("countDown(" + secs + ",'" + surl + "')", 1000);
+			} else {
+				location.href = surl;
+			}
+		}
+	</script>
+
+
+	<div align="center">
+
+		<span id="jumpTo">
+			5
+		</span>
+
+		<script type="text/javascript">
+			countDown(5, 'https://www.baidu.com');
+		</script>
+	</div>
+
+
+</div>
+</template>    
+
+<script>
+const font0 = { template: '#font0' }
+const font1 = { template: '#font1' }
+const font2 = { template: '#font2' }
+const font3 = { template: '#font3' }
+const font4 = { template: '#font4' }
+const font5 = { template: '#font5' }
+const font_suoyin = { template: '#font_suoyin' }//字库索引
+const font_myfont = { template: '#font_myfont' }//我的字体
+
+const routes = [
+  { path: '/', component: font0 },
+  { path: '/font1', component: font1 },
+  { path: '/font2', component: font2 },
+  { path: '/font3', component: font3 },
+  { path: '/font4', component: font4 },
+  { path: '/font5', component: font5 },
+  { path: '/font_suoyin', component: font_suoyin },
+  { path: '/font_myfont', component: font_myfont }
+]
+const router = new VueRouter({
+  routes // (缩写) 相当于 routes: routes
+})
+const app = new Vue({
+  router
+}).$mount('#app')
+
+    //ispress:是否按下开始绘制,pen:画笔相关配置,data:绘图数据,用于重绘时调用
+    var hwrite = { help: {}, canvas: null, ctx: null, pen: { size: 6, color: "#000" }, cfg: { bgcolor: "#fff" }, ispress: false, pos: { x: 0, y: 0 }, data: [] };
+    hwrite.newData = function (d) { return { "sx": hwrite.pos.x, "sy": hwrite.pos.y, "endx": d.x, "endy": d.y, "strokeStyle": hwrite.pen.color, "lineWidth": hwrite.pen.size }; }
+    hwrite.pen.brush = function (pos) {
+        var d = hwrite.help.getpos(pos.x, pos.y);
+        var model = hwrite.newData(d);
+
+        hwrite.pen.brushByModel(hwrite.ctx,model);
+        hwrite.pos = d;
+        hwrite.data.push(model);
+    }
+    var myModal;
+    function downimg()
+    {
+     myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+     myModal.show();
+    }
+    function Quote()
+    { 
+        myModal.hide();
+    }
+
+    hwrite.pen.brushByModel=function(ctx,model)
+    {
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(model.sx, model.sy);
+        ctx.lineTo(model.endx, model.endy);
+        ctx.strokeStyle = model.strokeStyle;
+        ctx.lineWidth = model.lineWidth;
+        ctx.lineCap = "round";//设置或返回线条的结束端点样式
+        ctx.lineJoin = "round";//设置或返回两条线相交时，所创建的拐角类型
+        ctx.stroke();
+        ctx.closePath();
+        ctx.restore();
+    }
+    //撤消上一笔操作
+    hwrite.pen.cancel = function () {
+        for (var i = (hwrite.data.length - 1) ; i > 0; i--) {
+            var model = hwrite.data.pop();
+            if (model.type == "start") {  break; }
+        }
+        hwrite.pen.refresh();
+    }
+    hwrite.pen.refresh = function (conf) {
+        if (!conf) { conf = { panel: true }; }
+        hwrite.ctx.clearRect(0, 0, hwrite.canvas.width, hwrite.canvas.height);
+        if (conf.panel == true) { hwrite.help.drawPanel(); }
+        for (var i = 0; i < hwrite.data.length; i++) {
+            var model = hwrite.data[i];
+            if (model.type && model.type == "start") { continue; }
+            hwrite.pen.brushByModel(hwrite.ctx, hwrite.data[i]);
+        }
+    }
+    hwrite.help.downimg = function () {
+        hwrite.pen.refresh({ panel: false });
+        var MIME_TYPE = "image/png";
+        var imgURL = hwrite.canvas.toDataURL(MIME_TYPE);//base64
+        var dlLink = document.createElement('a');
+        dlLink.download = "预览";
+        dlLink.href = imgURL;
+        dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+        document.body.appendChild(dlLink);
+        dlLink.click();
+        document.body.removeChild(dlLink);
+        hwrite.pen.refresh();
+    }
+    //初始化画板,可根据需要自修改
+    hwrite.help.drawPanel = function () {
+        var ctx = hwrite.ctx;
+        ctx.save();
+
+        var canvasWidth = hwrite.canvas.width;
+        var canvasHeight = hwrite.canvas.height;
+        ctx.fillStyle = hwrite.cfg.bgcolor;
+        ctx.strokeStyle = hwrite.cfg.bgcolor;
+        ctx.beginPath();
+        ctx.rect(0, 0, canvasWidth, canvasHeight);
+        ctx.stroke();
+        ctx.fill();
+        //---------------------
+        ctx.strokeStyle = "red";
+        ctx.beginPath();
+        ctx.moveTo(3, 3);
+        ctx.lineTo(canvasWidth - 3, 3);
+        ctx.lineTo(canvasWidth - 3, canvasHeight - 3);
+        ctx.lineTo(3, canvasHeight - 3);
+        ctx.closePath();
+        ctx.lineWidth = 6;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(canvasWidth, canvasHeight);
+        ctx.moveTo(canvasWidth, 0);
+        ctx.lineTo(0, canvasHeight);
+        ctx.moveTo(canvasWidth / 2, 0);
+        ctx.lineTo(canvasWidth / 2, canvasHeight);
+        ctx.moveTo(0, canvasHeight / 2);
+        ctx.lineTo(canvasWidth, canvasHeight / 2);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.restore();
+    }
+    hwrite.help.clear = function () {
+        hwrite.ctx.clearRect(0, 0, hwrite.canvas.width, hwrite.canvas.height);
+        hwrite.data = [];
+        hwrite.help.drawPanel();
+    }
+    hwrite.help.getpos = function (a,c) {//x,y
+        var b = hwrite.canvas.getBoundingClientRect();//用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
+        return {
+            x: Math.round(a - b.left),
+            y: Math.round(c - b.top)
+        };
+    }
+    //----------------------------------page
+    $(function () {
+        hwrite.canvas = document.getElementById("canvas_main");
+        hwrite.ctx = hwrite.canvas.getContext("2d");
+        // ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+        hwrite.canvas.height = hwrite.canvas.width = Math.min(600, $(window).width() - 60);
+        hwrite.help.drawPanel();
+        //--------------------------
+        hwrite.canvas.onmousedown = function (e) {
+            e.preventDefault();
+            beginStroke({
+                x: e.clientX,
+                y: e.clientY
+            });
+        };
+        hwrite.canvas.onmouseup = function (e) {
+            e.preventDefault();
+            endStroke();
+        };
+        hwrite.canvas.onmouseout = function (e) {
+            e.preventDefault();
+            hwrite.pen.refresh();
+            endStroke();
+        };
+        hwrite.canvas.onmousemove = function (e) {
+            e.preventDefault();
+            if (hwrite.ispress) { hwrite.pen.brush({ x: e.clientX, y: e.clientY }); }
+            else
+            {
+                hwrite.pen.refresh();
+                var d = hwrite.help.getpos(e.clientX, e.clientY);
+                var ctx = hwrite.ctx;
+                ctx.save();
+
+                ctx.beginPath();
+                //ctx.shadowBlur = 20;//很吃性能,取消
+                //ctx.shadowColor = "black";
+                ctx.fillStyle = hwrite.pen.color;
+                ctx.arc(d.x, d.y, (hwrite.pen.size / 2), 0, Math.PI * 2, true);
+                ctx.fill();
+                ctx.closePath();
+
+                ctx.restore();
+                
+            }
+        };
+        //移动兼容
+        hwrite.canvas.addEventListener("touchstart", function (e) {
+            e.preventDefault();
+            touch = e.touches[0];
+            beginStroke({
+                x: touch.pageX,
+                y: touch.pageY
+            });
+        });
+        hwrite.canvas.addEventListener("touchmove", function (a) {
+            a.preventDefault();
+            if (hwrite.ispress) {
+                touch = a.touches[0];
+                hwrite.pen.brush({
+                    x: touch.pageX,
+                    y: touch.pageY
+                });
+            }
+        });
+        hwrite.canvas.addEventListener("touchend", function (a) {
+            a.preventDefault();
+            endStroke();
+        });
+        //-----------------------------
+        $(".size div").click(function () {
+            $(".size div").removeClass("active");
+            hwrite.pen.size = $(this).data("size");
+            $(this).addClass("active");
+        });
+        $(".color div").click(function () {
+            $(".color div").removeClass("active");
+            hwrite.pen.color = $(this).data("color");
+            $(this).addClass("active");
+        });
+    })
+    //----------------------------------
+    function beginStroke(a) {
+        hwrite.ispress = true;
+        hwrite.pos = hwrite.help.getpos(a.x, a.y);
+        hwrite.data.push({ type: "start" });
+    }
+    function endStroke() {
+        hwrite.ispress = false;
+    }
+    function saveToSvg() {
+        var ctx = C2S(hwrite.canvas.height, hwrite.canvas.width);
+
+        for (var i = 0; i < hwrite.data.length; i++) {
+            var model = hwrite.data[i];
+            if (model.type && model.type == "start") { continue; }
+            hwrite.pen.brushByModel(ctx, hwrite.data[i]);
+        }
+        var svg = ctx.getSerializedSvg(); //true here, if you need to convert named to numbered entities.
+        console.log(svg);
+        //<div id="svg"></div>
+        //var svg = ctx.getSvg();
+        //$("#svg").append(svg);
+    }
+
+    //swiper 
+    var swiper = new Swiper('.font_suoyin_show', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+	  centeredSlides: true,
+      loop: true,
+      keyboard:true,
+      grabCursor:true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });    
+</script>
+</body>
+</html>

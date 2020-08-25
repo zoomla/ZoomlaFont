@@ -1,0 +1,146 @@
+﻿<Window 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontZ01"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" x:Class="FontZ01.Index"
+        mc:Ignorable="d"
+        Title="逐浪字体大师(社区版）" Height="600" Width="1100" WindowStartupLocation="CenterScreen" Initialized="Window_Initialized" StateChanged="Window_StateChanged" AllowsTransparency="True" WindowStyle="None" Loaded="Window_Loaded">
+    <Grid Background="#FF191919">
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="532.188" Margin="0,46,0,0" Stroke="Black" VerticalAlignment="Top" Width="836.646"/>
+        <Rectangle Margin="835,48,10,35.963" Stroke="#FF262637" Fill="#FF262637" Visibility="Hidden"/>
+        <Label x:Name="Information" Content="" Foreground="White" HorizontalAlignment="Center" Height="21" Margin="825,578,61,0" VerticalAlignment="Top" Width="214"  FontSize="9" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.003"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Image Margin="61.773,105.736,838.227,294.264" Source="/res/gezi.png" Stretch="Fill">
+        </Image>
+        <Image Margin="333.471,105.736,566.529,294.264" Source="/res/gezi.png" Stretch="Fill"/>
+        <Image Margin="586.075,105.736,313.925,294.264" Source="/res/gezi.png" Stretch="Fill"/>
+        <Image Margin="61.773,341.736,838.227,58.264" Source="/res/gezi.png" Stretch="Fill"/>
+        <Image Margin="333.471,341.736,566.529,58.264" Source="/res/gezi.png" Stretch="Fill"/>
+        <Image Margin="586.075,341.736,313.925,58.264" Source="/res/gezi.png" Stretch="Fill"/>
+        <Image Source="res/left_bg.png" Margin="533.471,37,-274,21.812"/>
+        <Button x:Name="Name" Content="中文字库创作" HorizontalAlignment="Left" Height="36" Margin ="886,92,0,0" VerticalAlignment="Top" Width="84.377" Background="#FF17171C" Style="{StaticResource MyButton}" Click="Name_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Name1" Content="英文字库创作" HorizontalAlignment="Left" Height="28" Margin="886,128,0,0" VerticalAlignment="Top" Width="84.377" Background="#FF1E1D2B"  Style="{StaticResource MyButton}" Click="Name_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Name2"  Content="藏语字库创作" HorizontalAlignment="Left" Height="28" Margin="886,161,0,0" VerticalAlignment="Top" Width="84.377" Background="#FF1E1D2B"  Style="{StaticResource MyButton}" Click="Name_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Name3"  Content="蒙语字库创作" HorizontalAlignment="Left" Height="28" Margin="886,194,0,0" VerticalAlignment="Top" Width="84.377" Background="#FF1E1D2B"  Style="{StaticResource MyButton}" Click="Name_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Name4"  Content="维语字库创作" HorizontalAlignment="Left" Height="28" Margin="886,222,0,0" VerticalAlignment="Top" Width="84.377" Background="#FF1E1D2B"  Style="{StaticResource MyButton}" Click="Name_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Name5"  Content="朝鲜语字库创作" HorizontalAlignment="Left" Height="28" Margin="886,255,0,0" HorizontalContentAlignment="Left"  VerticalAlignment="Top" Width="98" Background="#FF1E1D2B"  Style="{StaticResource MyButton}" Click="Name_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Name6"  Content="我的字库" HorizontalAlignment="Left" Height="28" Margin="886,292,0,0" VerticalAlignment="Top" Width="66" Background="#FF1E1D2B" Style="{StaticResource MyButton}" Foreground="#cd4821" Click="font_myfont_Click"/>
+        <Button x:Name="Font_network" Content="字体网" Margin="842,394,0,160" VerticalAlignment="Center" Width="50" Style="{StaticResource MyButton}" Height="46" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="Font_website_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network1" Content="字库索引" Margin="932,394,0,160" VerticalAlignment="Center" Width="50" Style="{StaticResource MyButton}" Height="46" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="font_list_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network2" Content="笔画解构" Margin="1010,394,0,160" VerticalAlignment="Center" Width="50" Style="{StaticResource MyButton}" Height="46" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="Font_bihua_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network3" Content="Unicode字码表" Margin="835,473,0,98" VerticalAlignment="Center" Width="82" Style="{StaticResource MyButton}" Height="29" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="Font_unicode_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network4" Content="汉语字典" Margin="932,464,0,90" VerticalAlignment="Center" Width="50" Style="{StaticResource MyButton}" Height="46" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="Font_dict_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network5" Content="方言" Margin="1010,464,0,90" VerticalAlignment="Center" Width="50" Style="{StaticResource MyButton}" Height="46" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="Fy_network_Click" FontSize="9" RenderTransformOrigin="0.555,0.557">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network6" Content="webfont资源" Margin="835,523.811,0,47.189" VerticalAlignment="Center" Width="82" Style="{StaticResource MyButton}" Height="29" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="Font_webfont_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network7" Content="字体知识" Margin="934,515,0,39" VerticalAlignment="Center" Width="50" Style="{StaticResource MyButton}" Height="46" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="Font_stu_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Font_network8" Content="字库欣赏" Margin="1012,515,0,39" VerticalAlignment="Center" Width="50" Style="{StaticResource MyButton}" Height="46" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Left" Click="font_suoyin_Click" FontSize="9">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Menu Name="menu" Margin="977,48,27,513" Background="{x:Null}">
+            <MenuItem FontSize="10" Height="40" Width="96" Cursor="Hand">
+                <MenuItem Header="ttf和otf的区别" Background="gray" Foreground="White" Click="font_Name1_Click"/>
+                <MenuItem Header="古代汉语标点考据" Background="gray" Foreground="White" Click="font_Name2_Click"/>
+                <MenuItem Header="web字体的现状与未来" Background="gray" Foreground="White" Click="font_Name3_Click"/>
+                <MenuItem Header="中文webfont研究" Background="gray" Foreground="White" Click="font_Name4_Click"/>
+                <MenuItem Header="海昏侯汉隶体研发故事" Background="gray" Foreground="White" Click="font_Name5_Click"/>
+                <MenuItem Header="字研" Background="gray" Foreground="White" Click="font_Name6_Click"/>
+            </MenuItem>
+        </Menu>
+        <Image HorizontalAlignment="Left" Height="177.359" Margin="87.244,115.17,0,0" VerticalAlignment="Top" Width="147.17" Source="/res/zhong.png" Stretch="Fill" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand"/>
+        <Image x:Name="guo" HorizontalAlignment="Left" Height="177.359" Margin="361.772,115.17,0,0" VerticalAlignment="Top" Width="147.17" Source="res/guo.png" Stretch="Fill" MouseLeftButtonDown="guo_MouseLeftButtonDown" Cursor="Hand"/>
+        <Image x:Name="meng" HorizontalAlignment="Left" Height="177.359" Margin="614.602,115.17,0,0" VerticalAlignment="Top" Width="147.17" Source="res/meng.png" Stretch="Fill" MouseLeftButtonDown="meng_MouseLeftButtonDown" Cursor="Hand"/>
+        <Image x:Name="Zhu"  HorizontalAlignment="Left" Height="164" Margin="87,359,0,0" VerticalAlignment="Top" Width="147" Source="res/zhu.png" Stretch="Fill" MouseLeftButtonDown="Zhu_MouseLeftButtonDown" Cursor="Hand"/>
+        <Image x:Name="Lang" HorizontalAlignment="Left" Height="169" Margin="362,354,0,0" VerticalAlignment="Top" Width="147" Source="res/lang.png" Stretch="Fill" MouseLeftButtonDown="Lang_MouseLeftButtonDown" Cursor="Hand"/>
+        <Image x:Name="Ren" HorizontalAlignment="Left" Height="177" Margin="615,354,0,0" VerticalAlignment="Top" Width="147" Source="res/ren.png" Stretch="Fill" MouseLeftButtonDown="Ren_MouseLeftButtonDown" Cursor="Hand"/>
+        <Menu Name="menu1" Margin="977,338,18,226" Background="{x:Null}">
+            <MenuItem FontSize="10" Height="33" Width="105" Cursor="Hand" Click="Font_network_Click"/>
+        </Menu>
+        <Rectangle Fill="#FF191919" HorizontalAlignment="Left" Height="48" Stroke="Black" VerticalAlignment="Top" Width="1100" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"/>
+        <Image x:Name="JaedRing" HorizontalAlignment="Left" Height="41" Margin="10,3,0,0" VerticalAlignment="Top" Width="42.736" Source="/res/JaedRing.png" MouseLeftButtonDown="JaedRing_MouseLeftButtonDown" Cursor="Hand"/>
+        <Label Content="逐浪字体大师（社区版）" HorizontalAlignment="Left" Margin="58,8,0,0" VerticalAlignment="Top" Height="32" Width="204" Foreground="#FFD8581C" FontSize="18"/>
+        <Button x:Name="Minimize"  HorizontalAlignment="Left" Margin="1016,3,0,0" VerticalAlignment="Top" Width="49" Height="37" Background="#FF191919" Style="{StaticResource MyButton}" Click="Minimize_Click">
+            <Image Source="res/minimize.png" Height="4" RenderTransformOrigin="0.5,0.5" Width="41" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Button>
+        <Image x:Name="Cloes" HorizontalAlignment="Left" Margin="1070,0,0,570" VerticalAlignment="Bottom" Width="17" Source="res/Cloes.png" Height="27" MouseLeftButtonDown="Cloes_MouseLeftButtonDown" Cursor="Hand"/>
+        <TextBlock x:Name="Barrage" HorizontalAlignment="Left" Margin="26,583,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="17" Width="789" FontSize="12" Foreground="#FFF0E1E1" Cursor="Hand" MouseLeftButtonDown="Barrage_MouseLeftButtonDown" Opacity="0.5"/>
+        <Image HorizontalAlignment="Left" Margin="5,583,0,0" Width="21" Source="/res/icon-test.png"/>
+        <Label x:Name="Iswangluo" Content="" HorizontalAlignment="Left" Margin="1026,578,0,0" VerticalAlignment="Top" Width="74" FontSize="9" Foreground="#FFF7F0F0" Height="21"/>
+    </Grid>
+</Window>

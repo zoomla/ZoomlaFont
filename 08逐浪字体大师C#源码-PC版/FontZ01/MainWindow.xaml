@@ -1,0 +1,9 @@
+﻿<my:WindowBase x:Class="FontZ01.MainWindow"
+               xmlns:my="clr-namespace:FontZ01"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="w"
+        Title="智图-企业用图智能平台p.ziti163.com" Width="1280" Height="760" Icon="logo.png">
+    <Grid>
+    </Grid>
+</my:WindowBase>
+    

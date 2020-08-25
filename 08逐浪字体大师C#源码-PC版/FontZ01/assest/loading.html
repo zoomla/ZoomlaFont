@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!--
+--------------------------------------------------------------------------------------------------------------------
+     ___          _____         _____          ____      _____             ______  
+    /  /\        /  /::\       /  /::\        /  /\:\    | : |            /  /: :\ 
+   /  /::|      /  /:/\:\     /  /:/\:\      /  /\ \:\   | : |           /  /:/ : \
+  /  /:/:|     /  /:/  \:\   /  /:/  \:\    /  /_ \ \ \  | : | ___      /  /:/| : |
+ /  /:/|:|__  /__/:/    \:| /__/:/    \:|  /__/\ \:\ \ \ | : |:  /\    /  /:/_| : |
+/__/:/ |:| /\ \  \:\    /:/ \  \:\    /:/  \  \:\ \:\ \/ | : |  /  /  /  / /..| : |
+\__\/  |:|/:/  \  \:\  /:/   \  \:\  /:/    \  \:\ \:\   | : | /  /  /  / /___| : |
+    |  |:/:/    \  \:\/:/     \  \:\/:/      \  \:\ \/   | : |/  /  /  / /    | : |
+    |  |::/      \  \::/       \  \::/        \  \:\     | : |  /  /  / /     | : |
+    |__|:/        \__\/         \__\/          \__\/     |_:_|_/  /__/_/      |_ /  2006-2020.Shanghai.Zoomla!CMS.Corp    
+ -----------------------------------------------------------------------------------©--------------------------------
+ -->
+<meta charset="utf-8">
+<title>启动中</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+
+<link href="style/global.css" rel="stylesheet"/>
+<style>
+* {padding: 0;margin: 0;} 
+html,body { width: 100%;height: 100%: overflow: hidden;position: fixed;top: 0%;left: 0%;} 
+html {background-color: rgba(179, 179, 179, 1);} 
+#letter {font-size: 120px;font-family: Helvetica;font-weight: Bold;color: rgba(18, 22, 26, 0.7);width: 120px;height: 120px;text-align: center;vertical-align: middle;line-height: 120px;position: fixed;top: 50%;left: 50%;margin-top: -60px;margin-left: -60px;opacity: 1;z-index: 15;} 
+#description {position: fixed;bottom: 10px;width: 100%;z-index: 100;font-family: Helvetica;font-weight: 200;color: rgba(18, 22, 26, 0.7);text-align: center;font-size: 11px;letter-spacing: 1px;} 
+#animation {position: fixed;animation: bounce 4s ease-in-out 0s infinite normal none;-webkit-animation: bounce 4s ease-in-out 0s infinite normal none;width: 100%;height: 100%;top: 0%;left: 0%;} 
+.helicopter {position: absolute;top: 50%;left: 50%;margin-top: -20px;margin-left: -220px;z-index: 105;-webkit-transform: rotate(-15deg) scale(0.9);-moz-transform: rotate(-15deg) scale(0.9);-ms-transform: rotate(-15deg) scale(0.9);-o-transform: rotate(-15deg) scale(0.9);transform: rotate(-15deg) scale(0.9);} 
+.helicopter .cockpit {width: 175px;height: 175px;border-radius: 100px;background-color: rgba(171, 220, 40, 1);position: fixed;overflow: hidden;z-index: 5;} 
+.helicopter .cockpit:before {content: "";width: 170px;height: 170px;border-radius: 40px;background-color: rgba(65, 94, 133, 1);position: absolute;z-index: 5;top: -10px;left: -25px;} 
+.helicopter .cockpit:after {content: "";width: 170px;height: 170px;border-radius: 40px;background-color: rgba(255, 255, 255, 0.1);position: absolute;z-index: 8;top: -60px;left: -60px;} 
+.helicopter .tail {position: absolute;border-top: 10px solid transparent;border-bottom: 90px solid transparent;border-left: 330px solid rgba(171, 220, 40, 1);border-top-right-radius: 10px;border-bottom-right-radius: 10px;height: 10px;top: 40px;left: 150px;-webkit-transform-origin: left center;transform-origin: left center;} 
+.helicopter .main {border-bottom: 70px solid rgba(171, 220, 40, 1);border-left: 15px solid transparent;border-right: 15px solid transparent;width: 10px;position: absolute;left: 130px;top: -10px;} 
+.helicopter .smallrotor {animation: rotate 0.6s linear 0s infinite normal none;-webkit-animation: rotate 0.6s linear 0s infinite normal none;background-color: rgba( 28, 18, 2, 0.02);width: 100px;height: 100px;position: absolute;top: 5px;left: 428px;border-radius: 100px;overflow: hidden;} 
+.helicopter .smallrotor div {width: 120px;height: 10px;background-color: rgba( 28, 18, 2, 0.03);position: absolute;top: 50%;left: 50%;margin-left: -60px;margin-top: -5px;} 
+.helicopter .smallrotor div:nth-of-type(2) {-webkit-transform: rotate( 90deg);-moz-transform: rotate( 90deg);-ms-transform: rotate( 90deg);-o-transform: rotate( 90deg);transform: rotate( 90deg);} 
+.helicopter .rotor {width: 700px;height: 700px;border-radius: 350px;position: absolute;top: -360px;left: -200px;overflow: hidden;background-color: rgba( 28, 18, 2, 0.03);-webkit-transform: scale( 1, 0.075);-moz-transform: scale( 1, 0.075);-ms-transform: scale( 1, 0.075);-o-transform: scale( 1, 0.075);transform: scale( 1, 0.075);z-index: 20;} 
+.helicopter .rotor .rotator {width: 700px; height: 700px; border-radius: 350px; position: absolute; animation: rotate 0.6s linear 0s infinite normal none;  -webkit-animation: rotate 0.6s linear 0s infinite normal none;}
+.helicopter .rotor .rotator div {  width: 700px; height: 60px; background-color: rgba( 28, 18, 2, 0.03); position: absolute; top: 50%; left: 50%; margin-left: -350px; margin-top: -30px;}
+.helicopter .rotor div:nth-of-type(1) {
+    -webkit-transform: rotate( 0deg);
+    -moz-transform: rotate( 0deg);
+    -ms-transform: rotate( 0deg);
+    -o-transform: rotate( 0deg);
+    transform: rotate( 0deg);
+}
+.helicopter .rotor div:nth-of-type(2) {
+    -webkit-transform: rotate( 90deg);
+    -moz-transform: rotate( 90deg);
+    -ms-transform: rotate( 90deg);
+    -o-transform: rotate( 90deg);
+    transform: rotate( 90deg);
+}
+.cloud { position: fixed;margin-left: -2000px; left: 0%;}
+.cloud:nth-of-type(1) {
+    top: 0%;
+    animation: cloudmove 18s linear 5s infinite normal none;
+    -webkit-animation: cloudmove 18s linear 5s infinite normal none;
+}
+.cloud:nth-of-type(2) {
+    top: 25%;
+    animation: cloudmove 30s linear -15s infinite normal none;
+    -webkit-animation: cloudmove 30s linear -15s infinite normal none;
+}
+.cloud:nth-of-type(3) {
+    top: 50%;
+    animation: cloudmove 20s linear 0s infinite normal none;
+    -webkit-animation: cloudmove 20s linear 0s infinite normal none;
+}
+.cloud:nth-of-type(4) {
+    top: 75%;
+    animation: cloudmove 20s linear 5s infinite normal none;
+    -webkit-animation: cloudmove 20s linear 5s infinite normal none;
+}
+.cloud:nth-of-type(5) {
+    top: 100%;
+    animation: cloudmove 25s linear -10s infinite normal none;
+    -webkit-animation: cloudmove 25s linear -10s infinite normal none;
+}
+.cloud .fluff{background-color:#fff;border-radius:200px;width:200px;height:200px;position:absolute;top:0;left:0;margin-top:-200px;margin-left:-200px;}
+
+.cloud .fluff:nth-of-type(1) {
+    -webkit-transform: scale( 0.8);
+    -moz-transform: scale( 0.8);
+    -ms-transform: scale( 0.8);
+    -o-transform: scale( 0.8);
+    transform: scale( 0.8);
+    margin-top: -320px;
+    margin-left: -80px;
+    animation: fluff 20s ease-in-out -4s infinite alternate none;
+    -webkit-animation: fluff 20s ease-in-out -4s infinite alternate none;
+}
+.cloud .fluff:nth-of-type(2) { margin-top: -340px;  margin-left: -30px;
+	animation: fluff 20s ease-in-out -8s infinite alternate none;
+    -webkit-animation: fluff 20s ease-in-out -8s infinite alternate none;
+}
+.cloud .fluff:nth-of-type(3) {
+    -webkit-transform: scale( 0.7);
+    -moz-transform: scale( 0.7);
+    -ms-transform: scale( 0.7);
+    -o-transform: scale( 0.7);
+    transform: scale( 0.7);
+    margin-top: -300px;
+    margin-left: 30px;
+    animation: fluff 20s ease-in-out -10s infinite alternate none;
+    -webkit-animation: fluff 20s ease-in-out -10s infinite alternate none;
+}
+.cloud .fluff:nth-of-type(4) {
+    -webkit-transform: scale( 0.5);
+    -moz-transform: scale( 0.5);
+    -ms-transform: scale( 0.5);
+    -o-transform: scale( 0.5);
+    transform: scale( 0.5);
+    margin-top: -250px;
+    margin-left: -150px;
+    animation: fluff 20s ease-in-out -15s infinite alternate none;
+    -webkit-animation: fluff 20s ease-in-out -15s infinite alternate none;
+}
+@keyframes fluff {
+    80% {
+        -webkit-transform: translate( 90px, -10px);
+        -moz-transform: translate( 90px, -10px);
+        -ms-transform: translate( 90px, -10px);
+        -o-transform: translate( 90px, -10px);
+        transform: translate( 90px, -10px);
+    }
+    60% {
+        -webkit-transform: translate( 10px, -5px);
+        -moz-transform: translate( 10px, -5px);
+        -ms-transform: translate( 10px, -5px);
+        -o-transform: translate( 10px, -5px);
+        transform: translate( 10px, -5px);
+    }
+    40% {
+        -webkit-transform: translate( 30px, -40px);
+        -moz-transform: translate( 30px, -40px);
+        -ms-transform: translate( 30px, -40px);
+        -o-transform: translate( 30px, -40px);
+        transform: translate( 30px, -40px);
+    }
+    20% {
+        -webkit-transform: translate( -90px, 10px);
+        -moz-transform: translate( -90px, 10px);
+        -ms-transform: translate( -90px, 10px);
+        -o-transform: translate( -90px, 10px);
+        transform: translate( -90px, 10px);
+    }
+    0% {
+        -webkit-transform: translate( 90px, 120px);
+        -moz-transform: translate( 90px, 120px);
+        -ms-transform: translate( 90px, 120px);
+        -o-transform: translate( 90px, 120px);
+        transform: translate( 90px, 120px);
+    }
+}
+@-webkit-keyframes fluff {
+    80% {
+        -webkit-transform: translate( 90px, -10px);
+        -moz-transform: translate( 90px, -10px);
+        -ms-transform: translate( 90px, -10px);
+        -o-transform: translate( 90px, -10px);
+        transform: translate( 90px, -10px);
+    }
+    60% {
+        -webkit-transform: translate( 10px, -5px);
+        -moz-transform: translate( 10px, -5px);
+        -ms-transform: translate( 10px, -5px);
+        -o-transform: translate( 10px, -5px);
+        transform: translate( 10px, -5px);
+    }
+    40% {
+        -webkit-transform: translate( 30px, -40px);
+        -moz-transform: translate( 30px, -40px);
+        -ms-transform: translate( 30px, -40px);
+        -o-transform: translate( 30px, -40px);
+        transform: translate( 30px, -40px);
+    }
+    20% {
+        -webkit-transform: translate( -90px, 10px);
+        -moz-transform: translate( -90px, 10px);
+        -ms-transform: translate( -90px, 10px);
+        -o-transform: translate( -90px, 10px);
+        transform: translate( -90px, 10px);
+    }
+    0% {
+        -webkit-transform: translate( 90px, 120px);
+        -moz-transform: translate( 90px, 120px);
+        -ms-transform: translate( 90px, 120px);
+        -o-transform: translate( 90px, 120px);
+        transform: translate( 90px, 120px);
+    }
+}
+@keyframes cloudmove {
+    0% {
+        margin-left: -2000px;
+        left: 0%;
+    }
+    100% {
+        margin-left: 2000px;
+        left: 100%;
+    }
+}
+@-webkit-keyframes cloudmove {
+    0% {
+        margin-left: -2000px;
+        left: 0%;
+    }
+    100% {
+        margin-left: 2000px;
+        left: 100%;
+    }
+}
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes bounce {
+    100% {
+        -webkit-transform: translate(0px, -50px);
+        -moz-transform: translate(0px, -50px);
+        -ms-transform: translate(0px, -50px);
+        -o-transform: translate(0px, -50px);
+        transform: translate(0px, -50px);
+    }
+    0% {
+        -webkit-transform: translate(0px, -50px);
+        -moz-transform: translate(0px, -50px);
+        -ms-transform: translate(0px, -50px);
+        -o-transform: translate(0px, -50px);
+        transform: translate(0px, -50px);
+    }
+    50% {
+        -webkit-transform: translate(0px, 50px);
+        -moz-transform: translate(0px, 50px);
+        -ms-transform: translate(0px, 50px);
+        -o-transform: translate(0px, 50px);
+        transform: translate(0px, 50px);
+    }
+}
+@-webkit-keyframes bounce {
+    100% {
+        -webkit-transform: translate(0px, -50px);
+        -moz-transform: translate(0px, -50px);
+        -ms-transform: translate(0px, -50px);
+        -o-transform: translate(0px, -50px);
+        transform: translate(0px, -50px);
+    }
+    0% {
+        -webkit-transform: translate(0px, -50px);
+        -moz-transform: translate(0px, -50px);
+        -ms-transform: translate(0px, -50px);
+        -o-transform: translate(0px, -50px);
+        transform: translate(0px, -50px);
+    }
+    50% {
+        -webkit-transform: translate(0px, 50px);
+        -moz-transform: translate(0px, 50px);
+        -ms-transform: translate(0px, 50px);
+        -o-transform: translate(0px, 50px);
+        transform: translate(0px, 50px);
+    }
+}
+</style>
+</head>
+<body>
+<div></div>
+<div></div>
+
+<div id="animation">
+    <div class="helicopter">
+        <div class="cockpit"></div>
+        <div class="tail"></div>
+        <div class="main"></div>
+        <div class="rotor">
+            <div class="rotator">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="smallrotor">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="cloud">
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+    </div>
+    <div class="cloud">
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+    </div>
+    <div class="cloud">
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+    </div>
+    <div class="cloud">
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+    </div>
+    <div class="cloud">
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+    </div>
+</div>
+<script>
+	setTimeout(function () {
+		var url = location.href.split("url=")[1];
+		if (url) {
+			location = url;
+		}
+	}, 1000);
+</script>
+</body>
+</html>

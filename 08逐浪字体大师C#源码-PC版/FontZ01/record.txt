@@ -1,0 +1,24 @@
+﻿=============================开发逻辑
+1.app.html中添加控制器与路由
+2.添加html模板至assets下目录
+  2.1:右键选中html模板,将其设为始终输出
+3.global.js中添加API调用
+4.后端扩展完成实际业务逻辑
+
+*修改model层后要重新生成
+------------------页面UI开发
+1.将其布署至IIS中,目录为/assets/
+2.通过http://localhost:888/html/app.html#/welcome,访问,修改UI(因wpf后端不可调用)
+
+
+=============================安装
+1.安装Net4.0,拷贝云管家程序 
+2.新建数据库,并执行/Config/sql.txt下的文件,修改global.config中的连接字符串
+  2.1:如需安装站群windows服务,需要以管理员身份启动才可
+
+*ZoomlaCMS_Sites源码位于\NetCoreCMS\Tools\CMSService\
+
+-------------------FZ使用
+1.参数配置--设定FZ目录
+2.执行SQL脚本生成数据表
+3.操作FZ Server,手动添加一个用户组与用户(用于完成初始化)

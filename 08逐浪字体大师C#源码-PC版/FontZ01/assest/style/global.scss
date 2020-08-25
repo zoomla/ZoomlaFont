@@ -1,0 +1,218 @@
+//CSS预编译文件基于Sass语法
+//这是Zoomla!逐浪CMS团队优化的Sass模板，我们为你预置了逐浪字库官方团队的高品质webFont之CDN库，你可完全采用中文定义写作，如下面写法都是合格
+//$中国变量之一:12px;
+//$中国人民中华人民共和国变量之二:#ff0;
+//.a1{width:$中国变量之一 ;}
+//.a2{background: $中国人民中华人民共和国变量之二;}
+//建议CSS注释写在代码段的起始处以使阅读更加流畅
+
+/* 全局样式定义 Powered by Zoomla!逐浪CMS z01.com*/
+@charset "utf-8";
+@import "zoomlaCMS";
+//@import url("https://code.z01.com/Zfonts.css");
+@import url("../res/css/Zfonts.css");
+
+$主红色: rgba(198, 47, 47, 1);
+
+a{color: #333;}
+a:hover{text-decoration: none; color: currentColor;}
+
+//引导页
+#loading{background:rgba(198, 47, 47, 0.72);height:100%;width:100%;position:fixed;z-index:1;margin-top:0;top:0;}
+#loading-center{width:100%;height:100%;position:relative;}
+#loading-center-absolute{position:absolute;left:46%;top:36%;height:50px;width:50px;margin-top:-25px;margin-left:-25px;-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:loading-center-absolute 1.5s infinite;animation:loading-center-absolute 1.5s infinite;}
+.object{float:left;width:5rem;height:5rem;background-color:#FFF;border-radius: 10rem;}
+
+#object_one {-webkit-animation: object_one 1.5s infinite;animation: object_one 1.5s infinite;}
+#object_two {-webkit-animation: object_two 1.5s infinite;animation: object_two 1.5s infinite;}
+#object_three {-webkit-animation: object_three 1.5s infinite;animation: object_three 1.5s infinite;}
+#object_four {-webkit-animation: object_four 1.5s infinite;animation: object_four 1.5s infinite;}
+
+@-webkit-keyframes loading-center-absolute {
+	100% {-webkit-transform: rotate(-45deg);}
+}
+
+@keyframes loading-center-absolute {
+	100% {transform: rotate(-45deg);-webkit-transform: rotate(-45deg);	}
+}
+
+@-webkit-keyframes object_one {
+	25% {-webkit-transform: translate(0, -50px) rotate(-180deg);}
+	100% {-webkit-transform: translate(0, 0) rotate(-180deg);}
+}
+
+@keyframes object_one {
+	25% {transform: translate(0, -50px) rotate(-180deg);-webkit-transform: translate(0, -50px) rotate(-180deg);	}
+	100% {transform: translate(0, 0) rotate(-180deg);-webkit-transform: translate(0, 0) rotate(-180deg);	}
+}
+
+@-webkit-keyframes object_two {
+	25% {-webkit-transform: translate(50px, 0) rotate(-180deg);}
+	100% {-webkit-transform: translate(0, 0) rotate(-180deg);}
+}
+
+@keyframes object_two {
+	25% {transform: translate(50px, 0) rotate(-180deg);	-webkit-transform: translate(50px, 0) rotate(-180deg);}
+	100% {transform: translate(0, 0) rotate(-180deg);-webkit-transform: translate(0, 0) rotate(-180deg);}
+}
+
+@-webkit-keyframes object_three {
+	25% {-webkit-transform: translate(-50px, 0) rotate(-180deg);}
+	100% {-webkit-transform: translate(0, 0) rotate(-180deg);}
+}
+
+@keyframes object_three {
+	25% {transform: translate(-50px, 0) rotate(-180deg);-webkit-transform: translate(-50px, 0) rotate(-180deg);	}
+	100% {transform: translate(0, 0) rotate(-180deg);-webkit-transform: translate(0, 0) rotate(-180deg);}
+}
+
+@-webkit-keyframes object_four {
+	25% {-webkit-transform: translate(0, 50px) rotate(-180deg);}
+	100% {-webkit-transform: translate(0, 0) rotate(-180deg);}
+}
+
+@keyframes object_four {
+	25% {transform: translate(0, 50px) rotate(-180deg);	-webkit-transform: translate(0, 50px) rotate(-180deg);}
+	100% {transform: translate(0, 0) rotate(-180deg);-webkit-transform: translate(0, 0) rotate(-180deg);}
+}
+
+//全局导航
+.inav{padding-top: 0;padding-bottom: 0;padding-left: 0.6rem; background: #c62f2f;
+.navbar-brand{display: flex;color: #fff;font-size: 0.8rem;
+	img{padding-right: 0.32rem; border-radius: 50%;width: 4.8rem;cursor: pointer;}
+	img:hover{transform: rotate(30deg);transition: all 1s;}
+	span{}
+	strong{display: block;font-size: 1.2rem;font-weight: 100;}
+	a{color:#fff;}
+	p{display: inline-block;padding-top: 0.84rem;opacity: 0.96;}
+	}
+.nav-link{color: #fff;}
+.active::after {   content: '';   display: block; margin: 2px auto 0; width: 3.8rem; height: 3px; border-radius: 2px; background-image: linear-gradient(to left, #f58365, #ff188a);}
+form{
+	a{padding-right: 0.4rem;color: #eee;}
+	}
+}
+
+//首页滑动门
+.i_indexTabs{margin: 1rem;
+.nav-tabs .nav-link.active{background:$主红色;color: #fff; }
+.nav-tabs .nav-link{    border-top-left-radius: 0;border-top-right-radius: 0;}
+}
+
+//应用列表
+.i_appsList{
+h1{padding-top: 3.2rem; text-align: center;line-height: 3.2rem; color:rgba(198, 47, 47, 0.6); font-size: 1.6rem;}
+ul{@include myul;}
+li{margin-top: 2rem;text-align: center;}
+a{color: #fff;}
+}
+
+.i_appsList_box{padding-top: 1rem;padding-bottom: 1rem; background-color: rgba(198, 47, 47, 0.7);box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 5px 0px, rgba(0, 0, 0, 0.0784314) 0px 2px 10px 0px;border-radius: 0.42rem; cursor: pointer;
+&:hover{background-color: rgba(198, 47, 47, 0.9);}
+i{display: block;font-size: 2.8rem;}
+}
+
+//我的图库
+.i_photoBox{@include dflex;height: calc(100vh - 6.2rem )}
+
+//ai识图
+.i_aiBox{margin-top: 6rem;text-align: center;
+h1{line-height: 3.2rem; color:rgba(198, 47, 47, 0.6); font-size: 1.4rem;}
+.btn-group{margin-top: 2rem;}
+}
+
+//字库
+.i_font{
+h1{padding-top: 3.2rem; text-align: center;line-height: 3.2rem; color:rgba(198, 47, 47, 0.6); font-size: 1.6rem;}
+h2 {margin-top: 4rem; text-align: center; font-size: 1.8rem; font-weight: 100; letter-spacing: 1rem; color: #484849; }
+}
+
+//字库列表
+.i_fontList {  display: flex; align-items: center;  /*background: linear-gradient(to right,#BD3F32,#7a4831);border-top: 1rem solid rgba(255,255,255,1.00);*/ 
+
+ul { display: flex; flex-wrap: wrap; padding-left: 0; margin-bottom: 0; list-style: none; }
+li { width: 25%; text-align: center; margin-top: 15px; }
+li:hover { background: rgba(70, 65, 65, 0.1); box-shadow: 2px 6px 14px #e2e2e2; transition: all .6s ease; border-radius: 6px; }
+li:hover span { color: #fff; }
+li span { margin-right: 0.5rem; padding: 0 10px; border: 1px solid #ccc; font-size: 3rem; }
+li .f1 { font-family: "ZoomlaXSongExtraLight",Microsoft YaHei UI light; }
+li .f2 { font-family: "ZoomlaYayu-A019"; }
+li .f3 { font-family: "Zoomlabaoren-A102"; }
+li .f4 { font-family: "ZoomlaYuan-A016"; }
+li .f5 { font-family: "zFont1"; }
+li .f6 { font-family: "ZoomlaXingtiJ6"; }
+li .f7 { font-family: "zFont2"; }
+li .f8 { font-family: "ZoomlaGetelove-A014"; }
+li .f9 { font-family: "ZoomlaChongyuan-A006"; }
+li .f10 { font-family: "ZoomlaXiangJiao-A025"; }
+li .f11 { font-family: "ZoomlaCarved"; }
+li .f12 { font-family: "ZoomlaJinnong-A106"; }
+li .f13 { font-family: "Zoomlayinxiangxili-A031"; }
+li .f14 { font-family: "ZoomlaShuaisong-A028"; }
+li .f15 { font-family: "ZoomlaLingHei-A056"; }
+li .f16 { font-family: "ZoomlaGaiShiHero-A050"; }
+}
+
+//更多链接
+.home_productMore { margin: auto; width: 10rem; height: 3rem; line-height: 3rem; margin-top: 1rem; text-align: center; border: 1px solid #ececec; color: #999999; transition: all ease-out .3s; 
+i { text-indent: -10px; color: rgba(255, 255, 255, 0); transition: all ease-out .3s; }
+&:hover { background-color: #4a4a4a; text-indent: 0; border: 1px solid rgba(0, 0, 0, 0.1); color: white; }
+&:hover i { text-indent: 18px; color: #cfcfcf; }
+}
+
+//页脚定义
+footer{padding-right: 1rem; line-height: 2.8rem; font-size: 0.8rem;color: #ccc;border-top: 1px solid #ddd;text-align: right;
+a{color: #ccc;}
+a:hover{color:#999;}
+}
+
+
+.home_list { height: 34rem;overflow: hidden; 
+ul { padding-left: 0; margin-bottom: 0; list-style: none; }
+li { margin-top: 1rem; height: 10rem; overflow: hidden; }
+li img { width: 100%;height: 10rem; }
+li strong { display: block; position: absolute; top: 0.6rem; left: 2rem; font-size: 1.48rem; color: #fff; z-index: 2; }
+li:hover strong { width: 100%; padding-top: 6.8rem; text-shadow: 2px 2px 4px #ccc; transition: 0.5s ease-in; transition-timing-function: cubic-bezier(0.17, 0.67, 0.06, 1); }
+}
+
+.home_list_mask { position: absolute; width: 94%; height: 95px; opacity: 0.64; background-color: rgba(0, 0, 0, 0); background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.25) 71%, rgba(0, 0, 0, 0)); transition: 0.2s all ease-in-out; z-index: 1; 
+&:hover { height: 100%; }
+}
+
+.HomeLogin_ren_head { height:6rem; background-size: cover; border-top-left-radius: 3px; border-top-right-radius: 3px; background:rgba(198, 47, 47, 0.8); }
+
+.HomeLogin_renImg { margin-top: -5rem; margin-bottom: 0.2rem; width: 9rem; height: 9rem; border: 3px solid #fff; border-radius: 100%; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+h5{margin-bottom: 0;}
+p{margin-bottom: 0;}
+}
+
+.HomeLogin_renPanel { margin-top: 1rem; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 4px;  }
+
+.home_ren{text-align: center;}
+
+//设置中心
+.i_settingBox{@include dflex;height:80vh;color: #ccc;}
+
+
+
+
+
+
+
+/*769-1930分辨率之间传统低分屏幕优化*/
+@media only screen and (min-width: 769px) and (max-width: 1930px) {
+
+}
+
+ /*小于768px手机优化*/
+@media screen and (max-width:768px){
+
+
+}
+
+
+
+
+
+
+/*key:UG93ZXJlZCBieSBab29tbGEh6YCQ5rWqQ01TIHd3d3cuejAxLmNvbQ== */

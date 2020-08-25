@@ -1,0 +1,105 @@
+//CSS预编译文件基于Sass语法
+//这是Zoomla!逐浪CMS团队优化的Sass模板，我们为你预置了逐浪字库官方团队的高品质webFont之CDN库，你可完全采用中文定义写作，如下面写法都是合格
+//$中国变量之一:12px;
+//$中国人民中华人民共和国变量之二:#ff0;
+//.a1{width:$中国变量之一 ;}
+//.a2{background: $中国人民中华人民共和国变量之二;}
+//建议CSS注释写在代码段的起始处以使阅读更加流畅
+
+/* 全局样式定义 Powered by Zoomla!逐浪CMS z01.com*/
+@charset "utf-8";
+@import "zoomlaCMS";
+@import url("https://code.z01.com/Zfonts.css");
+
+a{text-decoration: none;color: #333;}
+a:hover{text-decoration: none; color: currentColor;}
+.margintop10 {margin-top: 10px;}
+.relative { position:relative;}
+.padding15 { padding-left:15px; padding-right:15px;}
+.padding10{ padding-left:10px; padding-right:10px;}
+.padding5{ padding-left:5px; padding-right:5px;}
+.div_h35 { height:35px;}
+.margin_top20 { margin-top:20px;}
+.margin_bottom20 { margin-bottom:20px;}
+
+@font-face {font-family: "hfont";
+    src: url("fonts/逐浪海棠居刻本字.eot"); /* IE9 */
+    src: url("fonts/逐浪海棠居刻本字.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("fonts/逐浪海棠居刻本字.woff") format("woff"), /* chrome、firefox */
+    url("fonts/逐浪海棠居刻本字.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("fonts/逐浪海棠居刻本字.svg#逐浪海棠居刻本字") format("svg"); /* iOS 4.1- */
+    font-style: normal; font-weight: normal;
+}
+
+//写作专区
+.fontbox{position: relative;overflow: hidden;}
+
+.fontbox_demo{position: absolute;top:4rem;left: 50%;margin-left: -300px; width:600px; line-height: 1; font-size: 38rem; pointer-events: none; color: #eee; font-family: "hfont";}
+
+#canvas_container{z-index: 3;opacity: 0.6;}
+
+.tool{position: absolute;top:6rem;left:10rem; width:120px;}
+.tool .color {float:left; margin:5px; width:30px;}
+.tool .color div{width:24px; height:24px; border:solid 2px #aaa; margin-bottom:5px; opacity:0.5;}
+.tool .color div:hover{opacity:1; cursor:pointer;}
+.tool .color .active{opacity:1; border:solid 2px #000;}
+.tool .size {float:left; margin:5px; width:30px; margin-left:0;}
+.tool .size div{width:30px; height:30px; border:solid 2px #aaa; margin-bottom:5px; opacity:0.5;}
+.tool .size div:hover{opacity:1; cursor:pointer;}
+.tool .size .active{opacity:1; border:solid 2px #000;}
+.tool .size span{display:block; margin:3px auto; height:24px; background-color:black;}
+.tool .btn{width:70%;margin-bottom:10px;}
+
+//字体大赏界面
+.font_suoyin_show{height: 100vh;background:#ccc;
+.swiper-container{width:100%;height:100%;}
+.swiper-slide{@include dflex;text-align:center;background:#fff;transition:300ms;transform:scale(0.8);
+    span{display:block; font-size:20rem;}
+    span p{font-size: .98rem; font-weight: 100;font-family: $苹方极细字体;}
+    }
+.swiper-slide-active,.swiper-slide-duplicate-active{transform:scale(1)}
+}
+.font_suoyin_show01 span { font-family: "ZoomlaJinnong-A106"; }
+.font_suoyin_show02 span { font-family: "ZoomlaXiangJiao-A025"; }
+.font_suoyin_show03 span{font-family: "ZoomlaXSongExtraLight",Microsoft YaHei UI light;}
+.font_suoyin_show04 span{font-family: "ZoomlaYayu-A019";}
+.font_suoyin_show05 span { font-family: "Zoomlabaoren-A102"; }
+.font_suoyin_show06 span { font-family: "ZoomlaYuan-A016"; }
+.font_suoyin_show07 span { font-family: "zFont1"; }
+.font_suoyin_show08 span { font-family: "ZoomlaXingtiJ6"; }
+.font_suoyin_show09 span { font-family: "zFont2"; }
+.font_suoyin_show10 span { font-family: "ZoomlaGetelove-A014"; }
+.font_suoyin_show11 span { font-family: "ZoomlaChongyuan-A006"; }
+.font_suoyin_show12 span { font-family: "ZoomlaGaiShiHero-A050"; }
+.font_suoyin_show13 span { font-family: "ZoomlaCarved"; }
+.font_suoyin_show14 span { font-family: "ZoomlaMalie-A038"; }
+.font_suoyin_show15 span { font-family: "ZoomlaShuaisong-A028"; }
+.font_suoyin_show16 span { font-family: "Zoomlayinxiangxili-A031"; }
+.font_suoyin_show17 span { font-family: "ZoomlaLingHei-A056"; }
+
+.font_suoyin_more{position: absolute;bottom: 1rem;right: 1rem; z-index: 1;}
+
+
+
+
+
+
+
+
+
+
+/*769-1930分辨率之间传统低分屏幕优化*/
+@media only screen and (min-width: 769px) and (max-width: 1930px) {
+
+}
+
+ /*小于768px手机优化*/
+@media screen and (max-width:768px){
+}
+
+
+
+
+
+
+/*key:UG93ZXJlZCBieSBab29tbGEh6YCQ5rWqQ01TIHd3d3cuejAxLmNvbQ== */

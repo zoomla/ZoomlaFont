@@ -1,0 +1,169 @@
+<FileZillaServer>
+  <Settings>
+    <Item name="Admin port" type="numeric">14147</Item>
+  </Settings>
+  <Groups>
+    <Group Name="admin">
+      <Option Name="Bypass server userlimit">0</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">1</Option>
+      <Option Name="Comments">
+      </Option>
+      <Option Name="ForceSsl">0</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="1" DlLimit="10" ServerDlLimitBypass="0" UlType="1" UlLimit="10" ServerUlLimitBypass="0">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </Group>
+    <Group Name="normal">
+      <Option Name="Bypass server userlimit">0</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">1</Option>
+      <Option Name="Comments">
+      </Option>
+      <Option Name="ForceSsl">0</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="1" DlLimit="10" ServerDlLimitBypass="0" UlType="1" UlLimit="10" ServerUlLimitBypass="0">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </Group>
+    <Group Name="client">
+      <Option Name="Bypass server userlimit">0</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">1</Option>
+      <Option Name="Comments">
+      </Option>
+      <Option Name="ForceSsl">0</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="1" DlLimit="10" ServerDlLimitBypass="0" UlType="1" UlLimit="10" ServerUlLimitBypass="0">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </Group>
+    <Group Name="player">
+      <Option Name="Bypass server userlimit">0</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">1</Option>
+      <Option Name="Comments">
+      </Option>
+      <Option Name="ForceSsl">0</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="1" DlLimit="10" ServerDlLimitBypass="0" UlType="1" UlLimit="10" ServerUlLimitBypass="0">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </Group>
+  </Groups>
+  <Users>
+    <User Name="a1">
+      <Option Name="Pass">55511808baf7f301b5270d7334a4cec0</Option>
+      <Option Name="Group">admin</Option>
+      <Option Name="Bypass server userlimit">2</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">2</Option>
+      <Option Name="Comments">塔顶无药可救模压</Option>
+      <Option Name="ForceSsl">2</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="0" DlLimit="10" ServerDlLimitBypass="2" UlType="0" UlLimit="10" ServerUlLimitBypass="2">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </User>
+    <User Name="a2">
+      <Option Name="Pass">
+      </Option>
+      <Option Name="Group">client</Option>
+      <Option Name="Bypass server userlimit">2</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">2</Option>
+      <Option Name="Comments">
+      </Option>
+      <Option Name="ForceSsl">2</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="0" DlLimit="10" ServerDlLimitBypass="2" UlType="0" UlLimit="10" ServerUlLimitBypass="2">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </User>
+    <User Name="a3">
+      <Option Name="Pass">
+      </Option>
+      <Option Name="Group">admin</Option>
+      <Option Name="Bypass server userlimit">2</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">2</Option>
+      <Option Name="Comments">
+      </Option>
+      <Option Name="ForceSsl">2</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="0" DlLimit="10" ServerDlLimitBypass="2" UlType="0" UlLimit="10" ServerUlLimitBypass="2">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </User>
+    <User Name="aaaaaddd">
+      <Option Name="Pass">985bd57e5d8085a8375e01a78370a39a</Option>
+      <Option Name="Group">normal</Option>
+      <Option Name="Bypass server userlimit">2</Option>
+      <Option Name="User Limit">0</Option>
+      <Option Name="IP Limit">0</Option>
+      <Option Name="Enabled">2</Option>
+      <Option Name="Comments">sadfasdfasdf</Option>
+      <Option Name="ForceSsl">2</Option>
+      <Option Name="8plus3">0</Option>
+      <IpFilter>
+        <Disallowed />
+        <Allowed />
+      </IpFilter>
+      <Permissions />
+      <SpeedLimits DlType="0" DlLimit="10" ServerDlLimitBypass="2" UlType="0" UlLimit="10" ServerUlLimitBypass="2">
+        <Download />
+        <Upload />
+      </SpeedLimits>
+    </User>
+  </Users>
+</FileZillaServer>
