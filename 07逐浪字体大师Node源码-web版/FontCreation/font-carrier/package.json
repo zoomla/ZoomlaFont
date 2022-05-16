@@ -11,7 +11,7 @@
     "yisibl <percyley@qq.com>"
   ],
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "multiline": "^2.0.0",
     "opentype.js": "^1.1.0",
     "svg2ttf": "^4.3.0",
