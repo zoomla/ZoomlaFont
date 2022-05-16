@@ -21,7 +21,7 @@
     "ttf2svg": "0.0.7",
     "ttf2woff": "^2.0.1",
     "ttf2woff2": "^3.0.0",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.6.0"
   },
   "devDependencies": {},
   "repository": {
