@@ -1,5 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.props" Condition="Exists('../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.props')" />
+  <Import Project="../packages/chromiumembeddedframework.runtime.win-x86.134.3.9/build/chromiumembeddedframework.runtime.win-x86.props" Condition="Exists('../packages/chromiumembeddedframework.runtime.win-x86.134.3.9/build/chromiumembeddedframework.runtime.win-x86.props')" />
+  <Import Project="../packages/chromiumembeddedframework.runtime.win-x64.134.3.9/build/chromiumembeddedframework.runtime.win-x64.props" Condition="Exists('../packages/chromiumembeddedframework.runtime.win-x64.134.3.9/build/chromiumembeddedframework.runtime.win-x64.props')" />
   <Import Project="..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props" Condition="Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props')" />
   <Import Project="..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.props')" />
   <Import Project="..\packages\cef.redist.x86.79.1.36\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.79.1.36\build\cef.redist.x86.props')" />
@@ -96,6 +99,18 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="08逐浪字体大师C">
+      <HintPath>..\..\08逐浪字体大师C</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="08逐浪字体大师C">
+      <HintPath>..\..\08逐浪字体大师C</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="08逐浪字体大师C">
+      <HintPath>..\..\08逐浪字体大师C</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.2.2\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
@@ -2042,6 +2057,10 @@
     <Error Condition="!Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.props'))" />
     <Error Condition="!Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets'))" />
     <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('../packages/chromiumembeddedframework.runtime.win-x64.134.3.9/build/chromiumembeddedframework.runtime.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', '../packages/chromiumembeddedframework.runtime.win-x64.134.3.9/build/chromiumembeddedframework.runtime.win-x64.props'))" />
+    <Error Condition="!Exists('../packages/chromiumembeddedframework.runtime.win-x86.134.3.9/build/chromiumembeddedframework.runtime.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', '../packages/chromiumembeddedframework.runtime.win-x86.134.3.9/build/chromiumembeddedframework.runtime.win-x86.props'))" />
+    <Error Condition="!Exists('../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.props'))" />
+    <Error Condition="!Exists('../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.targets'))" />
   </Target>
   <Import Project="..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.79.1.360\build\CefSharp.Common.targets')" />
   <Import Project="..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.79.1.360\build\CefSharp.Wpf.targets')" />
@@ -2051,6 +2070,7 @@
     <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
   <Import Project="..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0-ci1837\build\MaterialDesignThemes.targets')" />
+  <Import Project="../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.targets" Condition="Exists('../packages/CefSharp.Common.134.3.90/build/CefSharp.Common.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
